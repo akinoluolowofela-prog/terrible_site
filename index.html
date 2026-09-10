@@ -4,354 +4,559 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>FREE PRIZE CLICK HERE 100% REAL</title>
+<title>⚠️ THE WORST WEBSITE EVER: ULTRA CHAOS ⚠️</title>
 
 <style>
-    * {
-        box-sizing: border-box;
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #00ff00;
+    color: #ff00ff;
+    font-family: "Comic Sans MS", cursive;
+    overflow-x: hidden;
+    transition: background .2s, color .2s;
+}
+
+header {
+    background: red;
+    color: yellow;
+    text-align: center;
+    padding: 30px 10px;
+    border: 15px dashed blue;
+}
+
+h1 {
+    font-size: clamp(42px, 8vw, 75px);
+    margin: 0;
+    text-shadow: 6px 6px blue, -5px -5px lime;
+    animation: wobble .35s infinite alternate;
+}
+
+@keyframes wobble {
+    from {
+        transform: rotate(-2deg) scale(1);
     }
 
-    html {
-        scroll-behavior: smooth;
+    to {
+        transform: rotate(2deg) scale(1.03);
+    }
+}
+
+marquee {
+    background: yellow;
+    color: red;
+    font-size: 24px;
+    padding: 10px;
+    border: 5px solid black;
+}
+
+.container {
+    max-width: 950px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.box {
+    background: cyan;
+    border: 10px ridge purple;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 15px 15px 0 red;
+}
+
+.warning {
+    background: black;
+    color: white;
+    border: 8px dotted red;
+    text-align: center;
+}
+
+.ugly {
+    font-size: 30px;
+    color: blue;
+    background: orange;
+    transform: rotate(-1deg);
+    padding: 10px;
+}
+
+button,
+.gift {
+    border: 8px outset gray;
+    padding: 14px 22px;
+    font-size: 20px;
+    font-family: "Comic Sans MS", cursive;
+    font-weight: bold;
+    background: yellow;
+    color: red;
+    margin: 8px;
+    cursor: pointer;
+}
+
+button:hover,
+.gift:hover {
+    background: red;
+    color: yellow;
+    transform: rotate(4deg) scale(1.07);
+}
+
+button:active {
+    border-style: inset;
+}
+
+#dontClick {
+    background: red;
+    color: white;
+    font-size: 32px;
+    position: relative;
+}
+
+.counter {
+    font-size: 34px;
+    background: white;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    border: 10px double black;
+}
+
+#loadingContainer {
+    width: 100%;
+    height: 35px;
+    background: gray;
+    border: 5px solid black;
+    overflow: hidden;
+}
+
+#loadingBar {
+    height: 100%;
+    width: 1%;
+    background: red;
+    transition: width .2s;
+}
+
+.gift {
+    display: inline-block;
+    text-decoration: none;
+    background: red;
+    color: yellow;
+    border-color: gold;
+    font-size: 28px;
+}
+
+.rick {
+    background: #111;
+    color: #00ffff;
+    border-color: #ff1493;
+}
+
+/* CHAOS METER */
+
+#chaosHUD {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 220px;
+    background: black;
+    color: lime;
+    border: 4px solid lime;
+    padding: 10px;
+    z-index: 50000;
+    font-family: monospace;
+    box-shadow: 5px 5px red;
+}
+
+#chaosBarContainer {
+    height: 20px;
+    background: white;
+    border: 3px solid red;
+    margin-top: 5px;
+}
+
+#chaosBar {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        lime,
+        yellow,
+        orange,
+        red,
+        magenta
+    );
+    transition: width .2s;
+}
+
+/* POPUPS */
+
+.popup {
+    position: fixed;
+    width: 340px;
+    max-width: calc(100vw - 20px);
+    background: #eeeeee;
+    color: black;
+    border: 3px solid #222;
+    box-shadow: 8px 8px 0 black;
+    z-index: 10000;
+    font-family: Arial, sans-serif;
+    user-select: none;
+}
+
+.popup-header {
+    background: #000080;
+    color: white;
+    padding: 8px;
+    font-weight: bold;
+    cursor: move;
+    touch-action: none;
+}
+
+.popup-content {
+    padding: 18px;
+}
+
+.popup-content button {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    padding: 7px 12px;
+    margin: 4px;
+}
+
+/* NOTIFICATIONS */
+
+.fake-notification {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    width: 300px;
+    max-width: calc(100vw - 30px);
+    background: white;
+    color: black;
+    padding: 16px;
+    border: 3px solid black;
+    box-shadow: 5px 5px black;
+    z-index: 9000;
+    animation: notificationIn .35s;
+}
+
+@keyframes notificationIn {
+    from {
+        transform: translateX(400px);
     }
 
-    body {
-        margin: 0;
-        min-height: 100vh;
-        background: #00ff00;
-        color: #ff00ff;
-        font-family: "Comic Sans MS", cursive;
-        overflow-x: hidden;
-        transition: background .25s, color .25s;
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* FLOATING */
+
+.floating {
+    position: fixed;
+    pointer-events: none;
+    z-index: 8500;
+    font-size: 30px;
+    animation: floatAway 4s linear forwards;
+}
+
+@keyframes floatAway {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) rotate(0);
     }
 
-    /* Yes, this is intentionally ugly. */
+    100% {
+        opacity: 0;
+        transform:
+            translate(var(--x), var(--y))
+            rotate(720deg);
+    }
+}
 
-    header {
-        background: red;
-        color: yellow;
-        text-align: center;
-        padding: 30px 10px;
-        border: 15px dashed blue;
+/* ACHIEVEMENT */
+
+#achievement {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    max-width: 320px;
+    background: #222;
+    color: white;
+    padding: 18px;
+    border: 3px solid gold;
+    box-shadow: 0 0 20px gold;
+    z-index: 60000;
+}
+
+/* FAKE VIRUS */
+
+#virus {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: black;
+    color: red;
+    z-index: 99999;
+    text-align: center;
+    padding: 15vh 20px;
+    font-family: monospace;
+}
+
+#virus h2 {
+    font-size: clamp(45px, 8vw, 80px);
+    animation: blink .2s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* FAKE UPDATE */
+
+#fakeUpdate {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #003399;
+    color: white;
+    z-index: 99998;
+    text-align: center;
+    padding: 15vh 20px;
+    font-family: Arial, sans-serif;
+}
+
+#updateBar {
+    width: 80%;
+    max-width: 700px;
+    height: 35px;
+    margin: 30px auto;
+    background: #222;
+    border: 3px solid white;
+}
+
+#updateProgress {
+    width: 0%;
+    height: 100%;
+    background: white;
+}
+
+/* EYES */
+
+.eye-area {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+}
+
+.eye {
+    width: 100px;
+    height: 100px;
+    background: white;
+    border: 8px solid black;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.pupil {
+    width: 35px;
+    height: 35px;
+    background: black;
+    border-radius: 50%;
+    position: absolute;
+    left: 32px;
+    top: 32px;
+}
+
+/* RAIN */
+
+.rain {
+    position: fixed;
+    top: -60px;
+    z-index: 8000;
+    pointer-events: none;
+    font-size: 35px;
+    animation: rainFall linear forwards;
+}
+
+@keyframes rainFall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* RAINBOW */
+
+.rainbow {
+    animation: rainbow .7s infinite;
+}
+
+@keyframes rainbow {
+    0% {
+        filter: hue-rotate(0deg);
     }
 
-    h1 {
-        font-size: clamp(42px, 8vw, 75px);
-        margin: 0;
-        text-shadow: 6px 6px blue, -5px -5px lime;
-        animation: wobble .35s infinite alternate;
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+/* SHAKE */
+
+.shake {
+    animation: shake .12s infinite;
+}
+
+@keyframes shake {
+    0%   { transform: translate(2px, 1px); }
+    25%  { transform: translate(-2px, -1px); }
+    50%  { transform: translate(1px, 2px); }
+    75%  { transform: translate(-1px, -2px); }
+    100% { transform: translate(2px, 1px); }
+}
+
+/* SPIN */
+
+.spin-page {
+    animation: spinPage 8s linear infinite;
+}
+
+@keyframes spinPage {
+    from {
+        transform: rotate(0deg);
     }
 
-    @keyframes wobble {
-        from {
-            transform: rotate(-2deg) scale(1);
-        }
-
-        to {
-            transform: rotate(2deg) scale(1.03);
-        }
+    to {
+        transform: rotate(360deg);
     }
+}
 
-    marquee {
-        background: yellow;
-        color: red;
-        font-size: 24px;
-        padding: 10px;
-        border: 5px solid black;
+/* BLACK HOLE */
+
+#blackHole {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 180px;
+    height: 180px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        black 20%,
+        purple 45%,
+        magenta 60%,
+        transparent 72%
+    );
+    box-shadow:
+        0 0 40px magenta,
+        0 0 80px purple,
+        0 0 120px blue;
+    z-index: 70000;
+    animation: blackHoleSpin 1s linear infinite;
+}
+
+@keyframes blackHoleSpin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
     }
+}
 
-    .container {
-        max-width: 950px;
-        margin: 30px auto;
-        padding: 20px;
-    }
+footer {
+    text-align: center;
+    background: pink;
+    color: blue;
+    padding: 40px;
+    border: 10px dotted green;
+}
 
-    .box {
-        background: cyan;
-        border: 10px ridge purple;
-        padding: 25px;
-        margin-bottom: 30px;
-        box-shadow: 15px 15px 0 red;
-    }
+.broken-image {
+    width: 180px;
+    height: 100px;
+    background: white;
+    border: 3px solid black;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px auto;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
 
-    .warning {
-        background: black;
-        color: white;
-        border: 8px dotted red;
-        text-align: center;
-    }
+.cursed {
+    filter: saturate(1.8) contrast(1.2);
+}
 
-    .ugly {
-        font-size: 30px;
-        color: blue;
-        background: orange;
-        transform: rotate(-1deg);
-        padding: 10px;
-    }
+/* SLOT MACHINE */
 
-    button,
-    .gift {
-        border: 8px outset gray;
-        padding: 14px 22px;
-        font-size: 20px;
-        font-family: "Comic Sans MS", cursive;
-        font-weight: bold;
-        background: yellow;
-        color: red;
-        margin: 8px;
-        cursor: pointer;
-    }
+.slot {
+    font-size: 50px;
+    background: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border: 10px ridge gold;
+    letter-spacing: 15px;
+}
 
-    button:hover,
-    .gift:hover {
-        background: red;
-        color: yellow;
-        transform: rotate(4deg) scale(1.07);
-    }
+/* FAKE AI */
 
-    button:active {
-        border-style: inset;
-    }
+.ai-result {
+    background: black;
+    color: #00ff00;
+    padding: 20px;
+    font-family: monospace;
+    min-height: 100px;
+}
 
-    #dontClick {
-        background: red;
-        color: white;
-        font-size: 32px;
-    }
+/* CURSOR */
 
-    .counter {
-        font-size: 34px;
-        background: white;
-        color: black;
-        padding: 20px;
-        text-align: center;
-        border: 10px double black;
-    }
+#fakeCursor {
+    position: fixed;
+    pointer-events: none;
+    z-index: 99997;
+    font-size: 35px;
+}
 
-    #loadingContainer {
-        width: 100%;
-        height: 35px;
-        background: gray;
-        border: 5px solid black;
-        overflow: hidden;
-    }
+/* BLACK HOLE BUTTON */
 
-    #loadingBar {
-        height: 100%;
-        width: 1%;
-        background: red;
-        transition: width .2s;
-    }
-
-    .gift {
-        display: inline-block;
-        text-decoration: none;
-        background: red;
-        color: yellow;
-        border-color: gold;
-        font-size: 28px;
-    }
-
-    .rick {
-        background: #111;
-        color: #00ffff;
-        border-color: #ff1493;
-    }
-
-    /* =========================
-       POPUPS
-       ========================= */
-
-    .popup {
-        position: fixed;
-        width: 340px;
-        max-width: calc(100vw - 20px);
-        background: #eeeeee;
-        color: black;
-        border: 3px solid #222;
-        box-shadow: 8px 8px 0 black;
-        z-index: 10000;
-        font-family: Arial, sans-serif;
-        user-select: none;
-    }
-
-    .popup-header {
-        background: #000080;
-        color: white;
-        padding: 8px;
-        font-weight: bold;
-        cursor: move;
-        touch-action: none;
-        user-select: none;
-    }
-
-    .popup-content {
-        padding: 18px;
-        user-select: text;
-    }
-
-    .popup-content button {
-        font-family: Arial, sans-serif;
-        font-size: 14px;
-        padding: 7px 12px;
-        margin: 4px;
-    }
-
-    /* =========================
-       FAKE NOTIFICATIONS
-       ========================= */
-
-    .fake-notification {
-        position: fixed;
-        right: 15px;
-        bottom: 15px;
-        width: 300px;
-        max-width: calc(100vw - 30px);
-        background: white;
-        color: black;
-        padding: 16px;
-        border: 3px solid black;
-        box-shadow: 5px 5px black;
-        z-index: 9000;
-        animation: notificationIn .35s;
-    }
-
-    @keyframes notificationIn {
-        from {
-            transform: translateX(400px);
-        }
-
-        to {
-            transform: translateX(0);
-        }
-    }
-
-    /* =========================
-       CHAOS
-       ========================= */
-
-    .shake {
-        animation: shake .12s infinite;
-    }
-
-    @keyframes shake {
-        0%   { transform: translate(2px, 1px); }
-        25%  { transform: translate(-2px, -1px); }
-        50%  { transform: translate(1px, 2px); }
-        75%  { transform: translate(-1px, -2px); }
-        100% { transform: translate(2px, 1px); }
-    }
-
-    .spin-page {
-        animation: spinPage 8s linear infinite;
-    }
-
-    @keyframes spinPage {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
-    }
-
-    .floating {
-        position: fixed;
-        pointer-events: none;
-        z-index: 8500;
-        font-size: 30px;
-        animation: floatAway 4s linear forwards;
-    }
-
-    @keyframes floatAway {
-        0% {
-            opacity: 1;
-            transform: translate(0, 0) rotate(0);
-        }
-
-        100% {
-            opacity: 0;
-            transform:
-                translate(
-                    var(--x),
-                    var(--y)
-                )
-                rotate(720deg);
-        }
-    }
-
-    /* =========================
-       ACHIEVEMENT
-       ========================= */
-
-    #achievement {
-        display: none;
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        max-width: 320px;
-        background: #222;
-        color: white;
-        padding: 18px;
-        border: 3px solid gold;
-        box-shadow: 0 0 20px gold;
-        z-index: 30000;
-    }
-
-    /* =========================
-       FAKE VIRUS
-       ========================= */
-
-    #virus {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: black;
-        color: red;
-        z-index: 99999;
-        text-align: center;
-        padding: 15vh 20px;
-        font-family: monospace;
-    }
-
-    #virus h2 {
-        font-size: clamp(45px, 8vw, 80px);
-        animation: blink .2s infinite;
-    }
-
-    @keyframes blink {
-        50% {
-            opacity: 0;
-        }
-    }
-
-    footer {
-        text-align: center;
-        background: pink;
-        color: blue;
-        padding: 40px;
-        border: 10px dotted green;
-    }
-
-    /* Fake broken image */
-    .broken-image {
-        width: 180px;
-        height: 100px;
-        background: white;
-        border: 3px solid black;
-        color: black;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 15px auto;
-        font-family: Arial, sans-serif;
-        font-size: 14px;
-    }
-
-    /* The site gets progressively more questionable */
-    .cursed {
-        filter: saturate(1.8) contrast(1.2);
-    }
+#blackHoleButton {
+    background: black;
+    color: magenta;
+    border-color: magenta;
+}
 </style>
 </head>
 
 <body>
+
+<!-- CHAOS HUD -->
+
+<div id="chaosHUD">
+    ☢️ CHAOS LEVEL:
+    <strong id="chaosLevel">0</strong>
+
+    <div id="chaosBarContainer">
+        <div id="chaosBar"></div>
+    </div>
+
+    <small>WARNING: probably unnecessary</small>
+</div>
+
 
 <header>
 
@@ -365,14 +570,15 @@
 
 
 <marquee>
-     YOU ARE VISITOR #1,000,000!!! 
-    YOU WON SOMETHING!!!  CLICK EVERYTHING!!! 
+    🚨 YOU ARE VISITOR #1,000,000!!! 🚨
+    YOU WON SOMETHING!!! CLICK EVERYTHING!!!
+    🚨 THIS WEBSITE HAS TOO MANY FEATURES 🚨
 </marquee>
 
 
 <div class="container">
 
-    <!-- INTRO -->
+    <!-- WARNING -->
 
     <div class="box warning">
 
@@ -387,14 +593,16 @@
             Proceeding is not recommended.
         </p>
 
+        <h1>💀</h1>
+
     </div>
 
 
-    <!-- FREE GIFT -->
+    <!-- GIFT -->
 
     <div class="box">
 
-        <h1> CONGRATULATIONS!!!</h1>
+        <h1>🎉 CONGRATULATIONS!!!</h1>
 
         <p class="ugly">
             YOU HAVE WON A FREE $500 GIFT CARD!!!
@@ -407,7 +615,7 @@
             rel="noopener noreferrer"
             onclick="giftClicked()"
         >
-             CLAIM FREE GIFT CARD!!!
+            🎁 CLAIM FREE GIFT CARD!!!
         </a>
 
         <p>
@@ -417,11 +625,11 @@
     </div>
 
 
-    <!-- BROKEN IMAGE -->
+    <!-- BROKEN LOGO -->
 
     <div class="box">
 
-        <h2> OUR COMPANY LOGO</h2>
+        <h2>OUR COMPANY LOGO</h2>
 
         <div class="broken-image">
             ⚠️ image failed to load
@@ -434,11 +642,11 @@
     </div>
 
 
-    <!-- COUNTER -->
+    <!-- TERRIBLE DECISION COUNTER -->
 
     <div class="box">
 
-        <h2> TERRIBLE DECISION COUNTER</h2>
+        <h2>💀 TERRIBLE DECISION COUNTER</h2>
 
         <div class="counter">
             You have made
@@ -453,14 +661,14 @@
 
     <div class="box">
 
-        <h2> FREE SECURITY SCAN</h2>
+        <h2>🔍 FREE SECURITY SCAN</h2>
 
         <p>
             Find out if your computer is suspicious.
         </p>
 
         <button onclick="scan()">
-             SCAN COMPUTER
+            🔍 SCAN COMPUTER
         </button>
 
         <p id="scanResult">
@@ -470,20 +678,18 @@
     </div>
 
 
-    <!-- FAKE DOWNLOAD -->
+    <!-- DOWNLOAD -->
 
     <div class="box">
 
-        <h2> IMPORTANT DOWNLOAD</h2>
+        <h2>📥 IMPORTANT DOWNLOAD</h2>
 
         <p>
             Downloading an extremely important file.
         </p>
 
         <div id="loadingContainer">
-
             <div id="loadingBar"></div>
-
         </div>
 
         <p id="loadingText">
@@ -514,14 +720,14 @@
 
     <div class="box">
 
-        <h2> MaKE THE WeBSITE wORsE(f0r some reason)</h2>
+        <h2>💀 MAKE THE WEBSITE WORSE</h2>
 
         <p>
             This button has absolutely no useful purpose.
         </p>
 
         <button onclick="makeWorse()">
-             MAKE IT WORSE
+            💣 MAKE IT WORSE
         </button>
 
         <p>
@@ -532,21 +738,154 @@
     </div>
 
 
+    <!-- EYES -->
+
+    <div class="box">
+
+        <h2>👁️ THE WEBSITE IS WATCHING YOU</h2>
+
+        <p>
+            Move your mouse around.
+        </p>
+
+        <div class="eye-area">
+
+            <div class="eye">
+                <div class="pupil"></div>
+            </div>
+
+            <div class="eye">
+                <div class="pupil"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SLOT MACHINE -->
+
+    <div class="box">
+
+        <h2>🎰 COMPLETELY LEGITIMATE SLOT MACHINE</h2>
+
+        <div class="slot" id="slot">
+            🍌 🍌 🍌
+        </div>
+
+        <button onclick="spinSlots()">
+            🎰 SPIN FOR MONEY
+        </button>
+
+        <p id="slotResult">
+            Jackpot probability: absolutely not.
+        </p>
+
+    </div>
+
+
+    <!-- FAKE AI -->
+
+    <div class="box">
+
+        <h2>🤖 AI LIFE ANALYZER</h2>
+
+        <p>
+            Our advanced artificial intelligence will
+            determine what is wrong with you.
+        </p>
+
+        <button onclick="analyzeYou()">
+            🧠 ANALYZE ME
+        </button>
+
+        <div class="ai-result" id="aiResult">
+            Awaiting subject...
+        </div>
+
+    </div>
+
+
+    <!-- RAIN -->
+
+    <div class="box">
+
+        <h2>🌧️ EMOJI WEATHER MACHINE</h2>
+
+        <p>
+            Select your weather.
+        </p>
+
+        <button onclick="emojiRain('💀')">
+            💀 SKULL RAIN
+        </button>
+
+        <button onclick="emojiRain('🍌')">
+            🍌 BANANA RAIN
+        </button>
+
+        <button onclick="emojiRain('🤡')">
+            🤡 CLOWN RAIN
+        </button>
+
+        <button onclick="emojiRain('💩')">
+            💩 POOP RAIN
+        </button>
+
+    </div>
+
+
+    <!-- RAINBOW -->
+
+    <div class="box">
+
+        <h2>🌈 RAINBOW MODE</h2>
+
+        <p>
+            There is no reason for this.
+        </p>
+
+        <button onclick="rainbowMode()">
+            🌈 ACTIVATE RAINBOW
+        </button>
+
+        <button onclick="stopRainbow()">
+            ❌ STOP RAINBOW
+        </button>
+
+    </div>
+
+
+    <!-- BLACK HOLE -->
+
+    <div class="box">
+
+        <h2>🕳️ DEFINITELY SAFE BLACK HOLE</h2>
+
+        <p>
+            Creates a completely unnecessary temporary
+            black hole on your screen.
+        </p>
+
+        <button id="blackHoleButton" onclick="blackHole()">
+            🕳️ OPEN BLACK HOLE
+        </button>
+
+    </div>
+
+
     <!-- SECRET -->
 
     <div class="box">
 
-        <h2> SECRET AREA</h2>
+        <h2>🔐 SECRET AREA</h2>
 
         <p>
             This definitely isn't another Rickroll.
         </p>
 
-        <button
-            class="rick"
-            onclick="secretRick()"
-        >
-             UNLOCK SECRET
+        <button class="rick" onclick="secretRick()">
+            🔓 UNLOCK SECRET
         </button>
 
     </div>
@@ -556,14 +895,14 @@
 
     <div class="box">
 
-        <h2> GENERATE FREE MONEY</h2>
+        <h2>💰 GENERATE FREE MONEY</h2>
 
         <p>
             This button generates real money.
         </p>
 
         <button onclick="money()">
-             GENERATE MONEY
+            💵 GENERATE MONEY
         </button>
 
         <p id="moneyResult"></p>
@@ -575,18 +914,35 @@
 
     <div class="box">
 
-        <h2> IMPORTANT QUESTION</h2>
+        <h2>🤔 IMPORTANT QUESTION</h2>
 
         <p>
             Do you trust this website?
         </p>
 
         <button onclick="trust(true)">
-            YES 
+            YES 👍
         </button>
 
         <button onclick="trust(false)">
-            Yes? 
+            Yes? 🤨
+        </button>
+
+    </div>
+
+
+    <!-- FAKE UPDATE -->
+
+    <div class="box">
+
+        <h2>🖥️ SYSTEM UPDATE</h2>
+
+        <p>
+            Your browser is extremely outdated.
+        </p>
+
+        <button onclick="fakeUpdate()">
+            📥 UPDATE BROWSER
         </button>
 
     </div>
@@ -596,7 +952,7 @@
 
     <div class="box">
 
-        <h2> EMERGENCY EXIT</h2>
+        <h2>🚨 EMERGENCY EXIT</h2>
 
         <p>
             If something has gone wrong, leave immediately.
@@ -606,7 +962,7 @@
             class="rick"
             onclick="emergencyExit()"
         >
-             EMERGENCY EXIT
+            🚪 EMERGENCY EXIT
         </button>
 
     </div>
@@ -616,14 +972,14 @@
 
     <div class="box">
 
-        <h2> TOTALLY NORMAL MUSIC PLAYER</h2>
+        <h2>🎵 TOTALLY NORMAL MUSIC PLAYER</h2>
 
         <p>
             This is definitely not Rick Astley.
         </p>
 
         <button onclick="music()">
-             PLAY MUSIC
+            ▶️ PLAY MUSIC
         </button>
 
     </div>
@@ -633,7 +989,7 @@
 
     <div class="box">
 
-        <h2> BREAKING NEWS</h2>
+        <h2>📢 BREAKING NEWS</h2>
 
         <marquee direction="right">
             BREAKING NEWS: NOTHING HAS HAPPENED
@@ -679,11 +1035,41 @@
         ERROR CODE: LOL-420-69
     </p>
 
+    <p>
+        Just kidding. It's a website.
+    </p>
+
     <button onclick="escapeVirus()">
         ATTEMPT TO ESCAPE
     </button>
 
 </div>
+
+
+<!-- FAKE UPDATE -->
+
+<div id="fakeUpdate">
+
+    <h1 style="text-shadow:none;">
+        🔄 SYSTEM UPDATE
+    </h1>
+
+    <p style="font-size:25px;">
+        Installing Extremely Unnecessary Things...
+    </p>
+
+    <div id="updateBar">
+        <div id="updateProgress"></div>
+    </div>
+
+    <h2 id="updateText">
+        0%
+    </h2>
+
+</div>
+
+
+<div id="blackHole"></div>
 
 
 <div id="achievement">
@@ -693,10 +1079,6 @@
 
 <script>
 
-/* =========================================
-   SETTINGS
-========================================= */
-
 const RICKROLL =
     "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
 
@@ -704,44 +1086,70 @@ let clicks = 0;
 let worseLevel = 0;
 let loading = 1;
 let popupCount = 0;
+let chaos = 0;
 let fakeCursorStarted = false;
 
 
 /* =========================================
-   COUNT TERRIBLE DECISIONS
+   COUNTING
 ========================================= */
 
 function countClick() {
 
     clicks++;
+    chaos += 2;
 
     document.getElementById("clickCount")
         .textContent = clicks;
 
+    updateChaos();
+
     if (clicks === 5)
-        achievement(
-            "You made 5 terrible decisions."
-        );
+        achievement("You made 5 terrible decisions.");
 
     if (clicks === 10)
-        achievement(
-            "You still haven't left."
-        );
+        achievement("You still haven't left.");
 
     if (clicks === 20)
-        achievement(
-            "This is becoming concerning."
-        );
+        achievement("This is becoming concerning.");
 
     if (clicks === 30)
-        achievement(
-            "You are REALLY committed."
-        );
+        achievement("You are REALLY committed.");
 
     if (clicks === 50)
-        achievement(
-            "🏆 MASTER OF BAD DECISIONS"
-        );
+        achievement("🏆 MASTER OF BAD DECISIONS");
+
+    if (clicks === 100)
+        achievement("💀 YOU HAVE BECOME THE WEBSITE.");
+
+}
+
+
+/* =========================================
+   CHAOS
+========================================= */
+
+function updateChaos() {
+
+    chaos = Math.min(100, chaos);
+
+    document.getElementById("chaosLevel")
+        .textContent = chaos;
+
+    document.getElementById("chaosBar")
+        .style.width = chaos + "%";
+
+    if (chaos >= 50) {
+        document.body.classList.add("cursed");
+    }
+
+    if (chaos >= 80) {
+        document.body.classList.add("shake");
+    }
+
+    if (chaos >= 100) {
+        achievement("☢️ MAXIMUM CHAOS ACHIEVED");
+    }
 }
 
 
@@ -761,9 +1169,7 @@ function achievement(text) {
     box.style.display = "block";
 
     setTimeout(() => {
-
         box.style.display = "none";
-
     }, 3500);
 }
 
@@ -785,7 +1191,7 @@ function rickroll() {
 
 
 /* =========================================
-   GIFT CARD
+   GIFT
 ========================================= */
 
 function giftClicked() {
@@ -831,7 +1237,7 @@ function verifyGift(button) {
     setTimeout(() => {
 
         content.innerHTML = `
-            <h3> ONE LAST STEP</h3>
+            <h3>ONE LAST STEP</h3>
 
             <p>
                 You are almost there.
@@ -847,7 +1253,7 @@ function verifyGift(button) {
 
 
 /* =========================================
-   SECRET RICKROLL
+   SECRET
 ========================================= */
 
 function secretRick() {
@@ -860,12 +1266,12 @@ function secretRick() {
         <h2>🎉 YOU FOUND IT!</h2>
 
         <p>
-            Congratulations on discovering the
-            secret reward.
+            Congratulations on discovering
+            the secret reward.
         </p>
 
         <button onclick="rickroll()">
-             COLLECT REWARD
+            COLLECT REWARD
         </button>
         `
     );
@@ -873,7 +1279,7 @@ function secretRick() {
 
 
 /* =========================================
-   EMERGENCY EXIT
+   EMERGENCY
 ========================================= */
 
 function emergencyExit() {
@@ -923,7 +1329,7 @@ function music() {
 
 
 /* =========================================
-   MAKE IT WORSE
+   MAKE WORSE
 ========================================= */
 
 function makeWorse() {
@@ -931,9 +1337,15 @@ function makeWorse() {
     countClick();
 
     worseLevel++;
+    chaos += 5;
+
+    if (chaos > 100)
+        chaos = 100;
 
     document.getElementById("worseLevel")
         .textContent = worseLevel;
+
+    updateChaos();
 
     const colors = [
         ["#00ff00", "#ff00ff"],
@@ -948,14 +1360,14 @@ function makeWorse() {
         ["navy", "yellow"]
     ];
 
-    const colorsUsed =
+    const selected =
         colors[(worseLevel - 1) % colors.length];
 
     document.body.style.background =
-        colorsUsed[0];
+        selected[0];
 
     document.body.style.color =
-        colorsUsed[1];
+        selected[1];
 
 
     switch (worseLevel) {
@@ -976,7 +1388,7 @@ function makeWorse() {
                 "Papyrus, fantasy";
 
             alert(
-                "Papyrus has been enabled.\n\n" +
+                "PAPYRUS ENABLED.\n\n" +
                 "There is no undo button."
             );
 
@@ -1026,13 +1438,8 @@ function makeWorse() {
 
         case 6:
 
-            createPopup(
-                "STOP!",
-                `
-                <p>
-                    This popup has no purpose.
-                </p>
-                `
+            notification(
+                "This popup has no purpose."
             );
 
             break;
@@ -1040,18 +1447,16 @@ function makeWorse() {
 
         case 7:
 
-            createFloating("💀");
-            createFloating("🤡");
-            createFloating("WHY?");
+            emojiRain("💀");
+            emojiRain("🤡");
+            emojiRain("WHY?");
 
             break;
 
 
         case 8:
 
-            notification(
-                "⚠️ Someone made the website worse."
-            );
+            rainbowMode();
 
             break;
 
@@ -1075,7 +1480,7 @@ function makeWorse() {
                 </p>
 
                 <button onclick="rickroll()">
-                     PLAY
+                    PLAY
                 </button>
                 `
             );
@@ -1085,7 +1490,7 @@ function makeWorse() {
 
         case 11:
 
-            for (let i = 0; i < 3; i++) {
+            for (let i = 0; i < 5; i++) {
 
                 setTimeout(() => {
 
@@ -1126,60 +1531,85 @@ function makeWorse() {
 
         case 15:
 
-            createPopup(
-                "FINAL WARNING",
-                `
-                <h2>⚠️ STOP</h2>
+            blackHole();
 
-                <p>
-                    There is absolutely no reason
-                    to continue.
-                </p>
+            break;
 
-                <button onclick="rickroll()">
-                    CONTINUE ANYWAY
-                </button>
-                `
-            );
+
+        case 16:
+
+            fakeUpdate();
+
+            break;
+
+
+        case 17:
+
+            emojiRain("🍌");
+
+            emojiRain("💩");
+
+            emojiRain("🧀");
+
+            break;
+
+
+        case 18:
+
+            document.body.classList.add("spin-page");
+
+            setTimeout(() => {
+                document.body.classList.remove("spin-page");
+            }, 8000);
+
+            break;
+
+
+        case 19:
+
+            for (let i = 0; i < 8; i++) {
+
+                setTimeout(() => {
+                    notification(
+                        "🚨 CHAOS DETECTED 🚨"
+                    );
+                }, i * 400);
+
+            }
+
+            break;
+
+
+        case 20:
+
+            document.getElementById("virus")
+                .style.display = "block";
 
             break;
 
 
         default:
 
-            if (worseLevel % 3 === 0) {
+            if (worseLevel % 2 === 0)
+                emojiRain("⚠️");
 
-                notification(
-                    "The website has become even worse."
+            if (worseLevel % 3 === 0)
+                createFloating("💀");
+
+            if (worseLevel % 5 === 0)
+                createPopup(
+                    "WHY?",
+                    "<h2>WHY ARE YOU STILL DOING THIS?</h2>"
                 );
-
-            }
-
-            if (worseLevel % 5 === 0) {
-
-                createFloating("⚠️");
-
-            }
-
-            if (worseLevel >= 20) {
-
-                document.getElementById("virus")
-                    .style.display = "block";
-            }
     }
 }
 
 
 /* =========================================
-   DRAGGABLE POPUPS
+   POPUPS
 ========================================= */
 
 function createPopup(title, content) {
-
-    /*
-        Keep the number of popups reasonable so
-        the browser doesn't get destroyed.
-    */
 
     if (popupCount >= 12) {
 
@@ -1203,16 +1633,30 @@ function createPopup(title, content) {
     const popupHeight = 250;
 
     const maxX =
-        Math.max(10, window.innerWidth - popupWidth - 10);
+        Math.max(
+            10,
+            window.innerWidth -
+            popupWidth -
+            10
+        );
 
     const maxY =
-        Math.max(10, window.innerHeight - popupHeight - 10);
+        Math.max(
+            10,
+            window.innerHeight -
+            popupHeight -
+            10
+        );
 
     popup.style.left =
-        Math.floor(Math.random() * maxX) + "px";
+        Math.floor(
+            Math.random() * maxX
+        ) + "px";
 
     popup.style.top =
-        Math.floor(Math.random() * maxY) + "px";
+        Math.floor(
+            Math.random() * maxY
+        ) + "px";
 
     popup.innerHTML = `
         <div class="popup-header">
@@ -1241,11 +1685,6 @@ function createPopup(title, content) {
 }
 
 
-/* =========================================
-   BETTER DRAGGING
-   Mouse + touch support
-========================================= */
-
 function makeDraggable(element, handle) {
 
     let dragging = false;
@@ -1257,16 +1696,20 @@ function makeDraggable(element, handle) {
         dragging = true;
 
         const point =
-            e.touches ? e.touches[0] : e;
+            e.touches
+                ? e.touches[0]
+                : e;
 
         const rect =
             element.getBoundingClientRect();
 
         offsetX =
-            point.clientX - rect.left;
+            point.clientX -
+            rect.left;
 
         offsetY =
-            point.clientY - rect.top;
+            point.clientY -
+            rect.top;
 
         element.style.zIndex = 30000;
 
@@ -1281,7 +1724,9 @@ function makeDraggable(element, handle) {
             return;
 
         const point =
-            e.touches ? e.touches[0] : e;
+            e.touches
+                ? e.touches[0]
+                : e;
 
         let x =
             point.clientX - offsetX;
@@ -1289,26 +1734,33 @@ function makeDraggable(element, handle) {
         let y =
             point.clientY - offsetY;
 
-        /*
-            Don't let the popup completely
-            disappear off-screen.
-        */
-
         const maxX =
-            window.innerWidth -
-            element.offsetWidth -
-            5;
+            Math.max(
+                5,
+                window.innerWidth -
+                element.offsetWidth -
+                5
+            );
 
         const maxY =
-            window.innerHeight -
-            element.offsetHeight -
-            5;
+            Math.max(
+                5,
+                window.innerHeight -
+                element.offsetHeight -
+                5
+            );
 
         x =
-            Math.max(5, Math.min(x, maxX));
+            Math.max(
+                5,
+                Math.min(x, maxX)
+            );
 
         y =
-            Math.max(5, Math.min(y, maxY));
+            Math.max(
+                5,
+                Math.min(y, maxY)
+            );
 
         element.style.left =
             x + "px";
@@ -1322,9 +1774,7 @@ function makeDraggable(element, handle) {
 
 
     function stopDrag() {
-
         dragging = false;
-
     }
 
 
@@ -1375,12 +1825,10 @@ function closePopup(button) {
     popup.remove();
 
     popupCount =
-        Math.max(0, popupCount - 1);
-
-    /*
-        Naturally replace the popup with
-        another unnecessary popup.
-    */
+        Math.max(
+            0,
+            popupCount - 1
+        );
 
     setTimeout(() => {
 
@@ -1398,7 +1846,7 @@ function closePopup(button) {
 
 
 /* =========================================
-   DO NOT CLICK
+   DON'T CLICK
 ========================================= */
 
 function dontClick() {
@@ -1421,16 +1869,16 @@ function dontClick() {
     alert(
         messages[
             Math.floor(
-                Math.random() * messages.length
+                Math.random() *
+                messages.length
             )
         ]
     );
 
     const button =
-        document.getElementById("dontClick");
-
-    button.style.position =
-        "relative";
+        document.getElementById(
+            "dontClick"
+        );
 
     button.style.left =
         Math.floor(
@@ -1453,7 +1901,9 @@ function scan() {
     countClick();
 
     const result =
-        document.getElementById("scanResult");
+        document.getElementById(
+            "scanResult"
+        );
 
     result.textContent =
         "🔍 Scanning...";
@@ -1537,7 +1987,7 @@ function trust(answer) {
 
 
 /* =========================================
-   FAKE MONEY
+   MONEY
 ========================================= */
 
 function money() {
@@ -1545,7 +1995,9 @@ function money() {
     countClick();
 
     const result =
-        document.getElementById("moneyResult");
+        document.getElementById(
+            "moneyResult"
+        );
 
     result.textContent =
         "Generating money...";
@@ -1565,7 +2017,7 @@ function money() {
         createPopup(
             "BANK ALERT",
             `
-            <h3> TRANSACTION COMPLETE</h3>
+            <h3>💸 TRANSACTION COMPLETE</h3>
 
             <p>
                 You generated $999,999,999.
@@ -1586,6 +2038,237 @@ function money() {
 
 
 /* =========================================
+   SLOT MACHINE
+========================================= */
+
+function spinSlots() {
+
+    countClick();
+
+    const symbols = [
+        "🍌",
+        "💀",
+        "🤡",
+        "💩",
+        "🍕",
+        "🦆",
+        "🚨",
+        "7️⃣"
+    ];
+
+    const slot =
+        document.getElementById("slot");
+
+    const result =
+        document.getElementById(
+            "slotResult"
+        );
+
+    let spins = 0;
+
+    const interval =
+        setInterval(() => {
+
+            slot.textContent =
+                Array.from(
+                    { length: 3 },
+                    () =>
+                        symbols[
+                            Math.floor(
+                                Math.random() *
+                                symbols.length
+                            )
+                        ]
+                ).join(" ");
+
+            spins++;
+
+            if (spins >= 12) {
+
+                clearInterval(interval);
+
+                const final =
+                    Array.from(
+                        { length: 3 },
+                        () =>
+                            symbols[
+                                Math.floor(
+                                    Math.random() *
+                                    symbols.length
+                                )
+                            ]
+                    );
+
+                slot.textContent =
+                    final.join(" ");
+
+                result.textContent =
+                    final[0] === final[1] &&
+                    final[1] === final[2]
+                        ? "🎉 JACKPOT!!! You won absolutely nothing!"
+                        : "❌ You lost. The casino is confused.";
+            }
+
+        }, 100);
+}
+
+
+/* =========================================
+   AI ANALYZER
+========================================= */
+
+function analyzeYou() {
+
+    countClick();
+
+    const result =
+        document.getElementById(
+            "aiResult"
+        );
+
+    const messages = [
+        "Analyzing brain...",
+        "Scanning vibes...",
+        "Checking decision-making...",
+        "Reviewing button history...",
+        "Calculating nonsense..."
+    ];
+
+    let i = 0;
+
+    result.textContent =
+        messages[0];
+
+    const interval =
+        setInterval(() => {
+
+            i++;
+
+            if (i < messages.length) {
+
+                result.textContent =
+                    messages[i];
+
+            } else {
+
+                clearInterval(interval);
+
+                const diagnoses = [
+                    "RESULT: You click buttons too much.",
+                    "RESULT: Your curiosity is dangerous.",
+                    "RESULT: You have questionable taste in websites.",
+                    "RESULT: You are 73% chaos.",
+                    "RESULT: The website has diagnosed itself instead."
+                ];
+
+                result.textContent =
+                    diagnoses[
+                        Math.floor(
+                            Math.random() *
+                            diagnoses.length
+                        )
+                    ];
+            }
+
+        }, 500);
+}
+
+
+/* =========================================
+   EMOJI RAIN
+========================================= */
+
+function emojiRain(emoji) {
+
+    countClick();
+
+    for (let i = 0; i < 35; i++) {
+
+        setTimeout(() => {
+
+            const item =
+                document.createElement("div");
+
+            item.className = "rain";
+
+            item.textContent = emoji;
+
+            item.style.left =
+                Math.random() * 100 + "vw";
+
+            item.style.animationDuration =
+                (2 + Math.random() * 4) + "s";
+
+            item.style.fontSize =
+                (20 + Math.random() * 30) + "px";
+
+            document.body.appendChild(item);
+
+            setTimeout(() => {
+                item.remove();
+            }, 6500);
+
+        }, i * 60);
+    }
+}
+
+
+/* =========================================
+   RAINBOW
+========================================= */
+
+function rainbowMode() {
+
+    countClick();
+
+    document.body.classList.add(
+        "rainbow"
+    );
+
+    achievement(
+        "🌈 RAINBOW MODE ACTIVATED"
+    );
+}
+
+
+function stopRainbow() {
+
+    countClick();
+
+    document.body.classList.remove(
+        "rainbow"
+    );
+}
+
+
+/* =========================================
+   BLACK HOLE
+========================================= */
+
+function blackHole() {
+
+    countClick();
+
+    const hole =
+        document.getElementById(
+            "blackHole"
+        );
+
+    hole.style.display = "block";
+
+    achievement(
+        "🕳️ YOU HAVE OPENED A TOTALLY SAFE BLACK HOLE"
+    );
+
+    setTimeout(() => {
+
+        hole.style.display = "none";
+
+    }, 5000);
+}
+
+
+/* =========================================
    FAKE NOTIFICATIONS
 ========================================= */
 
@@ -1598,7 +2281,7 @@ function notification(message) {
         "fake-notification";
 
     note.innerHTML = `
-        <strong> IMPORTANT</strong>
+        <strong>🚨 IMPORTANT</strong>
         <br><br>
         ${message}
     `;
@@ -1606,9 +2289,7 @@ function notification(message) {
     document.body.appendChild(note);
 
     setTimeout(() => {
-
         note.remove();
-
     }, 5000);
 }
 
@@ -1619,7 +2300,7 @@ function notification(message) {
 
 setInterval(() => {
 
-    if (Math.random() < .3) {
+    if (Math.random() < .35) {
 
         const messages = [
             "Someone clicked something.",
@@ -1630,7 +2311,8 @@ setInterval(() => {
             "Error: Common sense not found.",
             "Your mouse has been reported.",
             "Please reconsider your life choices.",
-            "Rick Astley is getting closer."
+            "Rick Astley is getting closer.",
+            "BREAKING: Absolutely nothing happened."
         ];
 
         notification(
@@ -1643,11 +2325,11 @@ setInterval(() => {
         );
     }
 
-}, 8000);
+}, 7000);
 
 
 /* =========================================
-   FLOATING RANDOM GARBAGE
+   FLOATING GARBAGE
 ========================================= */
 
 function createFloating(text) {
@@ -1679,9 +2361,7 @@ function createFloating(text) {
     document.body.appendChild(element);
 
     setTimeout(() => {
-
         element.remove();
-
     }, 4000);
 }
 
@@ -1691,11 +2371,6 @@ function createFloating(text) {
 ========================================= */
 
 function startFakeCursor() {
-
-    /*
-        Prevent accidentally starting
-        hundreds of timers.
-    */
 
     if (fakeCursorStarted)
         return;
@@ -1708,11 +2383,6 @@ function startFakeCursor() {
     cursor.id = "fakeCursor";
 
     cursor.textContent = "🖱️";
-
-    cursor.style.position = "fixed";
-    cursor.style.pointerEvents = "none";
-    cursor.style.zIndex = "99998";
-    cursor.style.fontSize = "35px";
 
     document.body.appendChild(cursor);
 
@@ -1729,7 +2399,61 @@ function startFakeCursor() {
 
 
 /* =========================================
-   LOADING BAR
+   EYES FOLLOW CURSOR
+========================================= */
+
+document.addEventListener(
+    "mousemove",
+    (event) => {
+
+        document
+            .querySelectorAll(".eye")
+            .forEach(eye => {
+
+                const pupil =
+                    eye.querySelector(
+                        ".pupil"
+                    );
+
+                const rect =
+                    eye.getBoundingClientRect();
+
+                const eyeX =
+                    rect.left +
+                    rect.width / 2;
+
+                const eyeY =
+                    rect.top +
+                    rect.height / 2;
+
+                const angle =
+                    Math.atan2(
+                        event.clientY - eyeY,
+                        event.clientX - eyeX
+                    );
+
+                const distance =
+                    Math.min(
+                        28,
+                        Math.hypot(
+                            event.clientX - eyeX,
+                            event.clientY - eyeY
+                        ) / 5
+                    );
+
+                pupil.style.transform =
+                    `translate(
+                        ${Math.cos(angle) * distance}px,
+                        ${Math.sin(angle) * distance}px
+                    )`;
+            });
+
+    }
+);
+
+
+/* =========================================
+   DOWNLOAD BAR
 ========================================= */
 
 setInterval(() => {
@@ -1738,12 +2462,14 @@ setInterval(() => {
 
         loading += Math.random() * .2;
 
-        document.getElementById("loadingBar")
-            .style.width =
+        document.getElementById(
+            "loadingBar"
+        ).style.width =
             loading + "%";
 
-        document.getElementById("loadingText")
-            .textContent =
+        document.getElementById(
+            "loadingText"
+        ).textContent =
             "Downloading... " +
             Math.floor(loading) +
             "%";
@@ -1753,7 +2479,74 @@ setInterval(() => {
 
 
 /* =========================================
-   FINISH WEBSITE
+   FAKE UPDATE
+========================================= */
+
+function fakeUpdate() {
+
+    countClick();
+
+    const screen =
+        document.getElementById(
+            "fakeUpdate"
+        );
+
+    const progress =
+        document.getElementById(
+            "updateProgress"
+        );
+
+    const text =
+        document.getElementById(
+            "updateText"
+        );
+
+    screen.style.display = "block";
+
+    let value = 0;
+
+    progress.style.width = "0%";
+
+    const interval =
+        setInterval(() => {
+
+            value +=
+                Math.random() * 7;
+
+            if (value > 100)
+                value = 100;
+
+            progress.style.width =
+                value + "%";
+
+            text.textContent =
+                Math.floor(value) + "%";
+
+            if (value >= 100) {
+
+                clearInterval(interval);
+
+                text.textContent =
+                    "UPDATE COMPLETE. NOTHING CHANGED.";
+
+                setTimeout(() => {
+
+                    screen.style.display =
+                        "none";
+
+                    achievement(
+                        "🖥️ You successfully installed absolutely nothing."
+                    );
+
+                }, 1500);
+            }
+
+        }, 300);
+}
+
+
+/* =========================================
+   FINISH
 ========================================= */
 
 function finish() {
@@ -1795,7 +2588,7 @@ function finish() {
         createPopup(
             "SUCCESS!",
             `
-            <h2> YOU DID IT!</h2>
+            <h2>🎉 YOU DID IT!</h2>
 
             <p>
                 You successfully finished
@@ -1808,12 +2601,16 @@ function finish() {
             `
         );
 
+        achievement(
+            "🏆 WEBSITE COMPLETION ACHIEVEMENT"
+        );
+
     }, 3500);
 }
 
 
 /* =========================================
-   FAKE VIRUS
+   VIRUS ESCAPE
 ========================================= */
 
 function escapeVirus() {
@@ -1823,16 +2620,17 @@ function escapeVirus() {
     alert(
         "Nice try.\n\n" +
         "There was never a virus.\n\n" +
-        "The real virus was the website....lol"
+        "The real virus was the website... lol."
     );
 
-    document.getElementById("virus")
-        .style.display = "none";
+    document.getElementById(
+        "virus"
+    ).style.display = "none";
 
     createPopup(
         "ESCAPE SUCCESSFUL",
         `
-        <h2> YOU ESCAPED!</h2>
+        <h2>🎉 YOU ESCAPED!</h2>
 
         <p>
             Unfortunately, you're still here.
@@ -1865,7 +2663,9 @@ setInterval(() => {
             "404",
             "LOL",
             "⚠️",
-            "RICK?"
+            "RICK?",
+            "🍌",
+            "💩"
         ];
 
         createFloating(
@@ -1878,7 +2678,53 @@ setInterval(() => {
         );
     }
 
-}, 3500);
+}, 3000);
+
+
+/* =========================================
+   RANDOM CHAOS LEVEL
+========================================= */
+
+setInterval(() => {
+
+    if (chaos < 100 && Math.random() < .2) {
+
+        chaos++;
+
+        updateChaos();
+    }
+
+}, 3000);
+
+
+/* =========================================
+   RANDOM POPUP
+========================================= */
+
+setInterval(() => {
+
+    if (
+        chaos >= 60 &&
+        Math.random() < .15
+    ) {
+
+        createPopup(
+            "🚨 AUTOMATIC WARNING",
+            `
+            <h3>THE WEBSITE IS GETTING WORSE</h3>
+
+            <p>
+                This was not requested.
+            </p>
+
+            <button onclick="countClick()">
+                I ACCEPT MY FATE
+            </button>
+            `
+        );
+    }
+
+}, 9000);
 
 </script>
 
