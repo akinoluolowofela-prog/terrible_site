@@ -22,8 +22,12 @@ body {
     color: #ff00ff;
     font-family: "Comic Sans MS", cursive;
     overflow-x: hidden;
-    transition: background .2s, color .2s;
+    transition: background .25s, color .25s;
 }
+
+/* =========================
+   HEADER
+========================= */
 
 header {
     background: red;
@@ -87,6 +91,10 @@ marquee {
     padding: 10px;
 }
 
+/* =========================
+   BUTTONS
+========================= */
+
 button,
 .gift {
     border: 8px outset gray;
@@ -118,6 +126,25 @@ button:active {
     position: relative;
 }
 
+.gift {
+    display: inline-block;
+    text-decoration: none;
+    background: red;
+    color: yellow;
+    border-color: gold;
+    font-size: 28px;
+}
+
+.rick {
+    background: #111;
+    color: #00ffff;
+    border-color: #ff1493;
+}
+
+/* =========================
+   COUNTER
+========================= */
+
 .counter {
     font-size: 34px;
     background: white;
@@ -126,6 +153,10 @@ button:active {
     text-align: center;
     border: 10px double black;
 }
+
+/* =========================
+   DOWNLOAD
+========================= */
 
 #loadingContainer {
     width: 100%;
@@ -142,22 +173,9 @@ button:active {
     transition: width .2s;
 }
 
-.gift {
-    display: inline-block;
-    text-decoration: none;
-    background: red;
-    color: yellow;
-    border-color: gold;
-    font-size: 28px;
-}
-
-.rick {
-    background: #111;
-    color: #00ffff;
-    border-color: #ff1493;
-}
-
-/* CHAOS METER */
+/* =========================
+   CHAOS HUD
+========================= */
 
 #chaosHUD {
     position: fixed;
@@ -194,7 +212,9 @@ button:active {
     transition: width .2s;
 }
 
-/* POPUPS */
+/* =========================
+   POPUPS
+========================= */
 
 .popup {
     position: fixed;
@@ -229,7 +249,9 @@ button:active {
     margin: 4px;
 }
 
-/* NOTIFICATIONS */
+/* =========================
+   NOTIFICATIONS
+========================= */
 
 .fake-notification {
     position: fixed;
@@ -256,13 +278,65 @@ button:active {
     }
 }
 
-/* FLOATING */
+/* =========================
+   SHAKE
+========================= */
+
+.shake {
+    animation: shake .12s infinite;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(2px, 1px);
+    }
+
+    25% {
+        transform: translate(-2px, -1px);
+    }
+
+    50% {
+        transform: translate(1px, 2px);
+    }
+
+    75% {
+        transform: translate(-1px, -2px);
+    }
+
+    100% {
+        transform: translate(2px, 1px);
+    }
+}
+
+/* =========================
+   RAINBOW
+========================= */
+
+.rainbow {
+    animation: rainbow .7s infinite;
+}
+
+@keyframes rainbow {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+/* =========================
+   FLOATING TEXT
+========================= */
 
 .floating {
     position: fixed;
     pointer-events: none;
     z-index: 8500;
     font-size: 30px;
+    font-weight: bold;
+    color: red;
     animation: floatAway 4s linear forwards;
 }
 
@@ -280,7 +354,9 @@ button:active {
     }
 }
 
-/* ACHIEVEMENT */
+/* =========================
+   ACHIEVEMENT
+========================= */
 
 #achievement {
     display: none;
@@ -296,7 +372,9 @@ button:active {
     z-index: 60000;
 }
 
-/* FAKE VIRUS */
+/* =========================
+   FAKE VIRUS
+========================= */
 
 #virus {
     display: none;
@@ -321,7 +399,9 @@ button:active {
     }
 }
 
-/* FAKE UPDATE */
+/* =========================
+   FAKE UPDATE
+========================= */
 
 #fakeUpdate {
     display: none;
@@ -350,7 +430,9 @@ button:active {
     background: white;
 }
 
-/* EYES */
+/* =========================
+   EYES
+========================= */
 
 .eye-area {
     display: flex;
@@ -379,101 +461,98 @@ button:active {
     top: 32px;
 }
 
-/* RAIN */
+/* =========================
+   SLOT MACHINE
+========================= */
 
-.rain {
-    position: fixed;
-    top: -60px;
-    z-index: 8000;
-    pointer-events: none;
-    font-size: 35px;
-    animation: rainFall linear forwards;
+.slot {
+    font-size: 50px;
+    background: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border: 10px ridge gold;
+    letter-spacing: 15px;
 }
 
-@keyframes rainFall {
-    to {
-        transform: translateY(110vh) rotate(720deg);
-        opacity: 0;
-    }
+/* =========================
+   FAKE AI
+========================= */
+
+.ai-result {
+    background: black;
+    color: #00ff00;
+    padding: 20px;
+    font-family: monospace;
+    min-height: 100px;
 }
 
-/* RAINBOW */
-
-.rainbow {
-    animation: rainbow .7s infinite;
-}
-
-@keyframes rainbow {
-    0% {
-        filter: hue-rotate(0deg);
-    }
-
-    100% {
-        filter: hue-rotate(360deg);
-    }
-}
-
-/* SHAKE */
-
-.shake {
-    animation: shake .12s infinite;
-}
-
-@keyframes shake {
-    0%   { transform: translate(2px, 1px); }
-    25%  { transform: translate(-2px, -1px); }
-    50%  { transform: translate(1px, 2px); }
-    75%  { transform: translate(-1px, -2px); }
-    100% { transform: translate(2px, 1px); }
-}
-
-/* SPIN */
-
-.spin-page {
-    animation: spinPage 8s linear infinite;
-}
-
-@keyframes spinPage {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-/* BLACK HOLE */
+/* =========================
+   BLACK HOLE
+========================= */
 
 #blackHole {
     display: none;
     position: fixed;
     left: 50%;
     top: 50%;
-    width: 180px;
-    height: 180px;
+    width: 120px;
+    height: 120px;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    background: radial-gradient(
-        circle,
-        black 20%,
-        purple 45%,
-        magenta 60%,
-        transparent 72%
-    );
+    background:
+        radial-gradient(
+            circle,
+            #000 0 35%,
+            #18002d 50%,
+            #7000aa 65%,
+            transparent 72%
+        );
     box-shadow:
-        0 0 40px magenta,
-        0 0 80px purple,
-        0 0 120px blue;
+        0 0 20px #8a00ff,
+        0 0 50px #4b0082,
+        0 0 100px #18002d;
     z-index: 70000;
-    animation: blackHoleSpin 1s linear infinite;
+    pointer-events: none;
 }
 
-@keyframes blackHoleSpin {
+.black-hole-active {
+    animation: blackHolePulse .3s infinite alternate;
+}
+
+@keyframes blackHolePulse {
+    from {
+        width: 100px;
+        height: 100px;
+    }
+
     to {
-        transform: translate(-50%, -50%) rotate(360deg);
+        width: 155px;
+        height: 155px;
     }
 }
+
+.sucked {
+    transition:
+        transform 1.5s cubic-bezier(.5, 0, 1, 1),
+        opacity 1.5s ease-in;
+    z-index: 69999 !important;
+}
+
+/* =========================
+   FAKE CURSOR
+========================= */
+
+#fakeCursor {
+    position: fixed;
+    pointer-events: none;
+    z-index: 99997;
+    font-size: 30px;
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
     text-align: center;
@@ -482,6 +561,10 @@ footer {
     padding: 40px;
     border: 10px dotted green;
 }
+
+/* =========================
+   BROKEN IMAGE
+========================= */
 
 .broken-image {
     width: 180px;
@@ -497,70 +580,56 @@ footer {
     font-size: 14px;
 }
 
+/* =========================
+   CURSED
+========================= */
+
 .cursed {
     filter: saturate(1.8) contrast(1.2);
 }
 
-/* SLOT MACHINE */
+/* =========================
+   SPIN
+========================= */
 
-.slot {
-    font-size: 50px;
-    background: black;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    border: 10px ridge gold;
-    letter-spacing: 15px;
+.spin-page {
+    animation: spinPage 8s linear infinite;
 }
 
-/* FAKE AI */
+@keyframes spinPage {
+    from {
+        transform: rotate(0deg);
+    }
 
-.ai-result {
-    background: black;
-    color: #00ff00;
-    padding: 20px;
-    font-family: monospace;
-    min-height: 100px;
-}
-
-/* CURSOR */
-
-#fakeCursor {
-    position: fixed;
-    pointer-events: none;
-    z-index: 99997;
-    font-size: 35px;
-}
-
-/* BLACK HOLE BUTTON */
-
-#blackHoleButton {
-    background: black;
-    color: magenta;
-    border-color: magenta;
+    to {
+        transform: rotate(360deg);
+    }
 }
 </style>
 </head>
+
 
 <body>
 
 <!-- CHAOS HUD -->
 
 <div id="chaosHUD">
-     CHAOS LEVEL:
+
+    CHAOS LEVEL:
     <strong id="chaosLevel">0</strong>
 
     <div id="chaosBarContainer">
         <div id="chaosBar"></div>
     </div>
 
-    <small>WARNING: probably unnecessary</small>
+    <small>This meter serves no purpose.</small>
+
 </div>
 
 
 <header>
 
-    <h1>⚠️ THE WORST WEBSITE EVER ⚠️</h1>
+    <h1>THE WORST WEBSITE EVER</h1>
 
     <p>
         OFFICIAL WEBSITE • DEFINITELY LEGIT • PROBABLY
@@ -570,19 +639,20 @@ footer {
 
 
 <marquee>
-     YOU ARE VISITOR #1,000,000!!! 
-    YOU WON SOMETHING!!! CLICK EVERYTHING!!!
-     
+    YOU ARE VISITOR #1,000,000!!!
+    YOU WON SOMETHING!!!
+    CLICK EVERYTHING!!!
 </marquee>
 
 
 <div class="container">
 
+
     <!-- WARNING -->
 
     <div class="box warning">
 
-        <h2> IMPORTANT WARNING </h2>
+        <h2>IMPORTANT WARNING</h2>
 
         <p>
             This website has been professionally designed
@@ -593,8 +663,6 @@ footer {
             Proceeding is not recommended.
         </p>
 
-        <h1></h1>
-
     </div>
 
 
@@ -602,7 +670,7 @@ footer {
 
     <div class="box">
 
-        <h1>🎉 CONGRATULATIONS!!!</h1>
+        <h1>CONGRATULATIONS!!!</h1>
 
         <p class="ugly">
             YOU HAVE WON A FREE $500 GIFT CARD!!!
@@ -615,7 +683,7 @@ footer {
             rel="noopener noreferrer"
             onclick="giftClicked()"
         >
-             CLAIM FREE GIFT CARD!!!
+            CLAIM FREE GIFT CARD!!!
         </a>
 
         <p>
@@ -625,14 +693,14 @@ footer {
     </div>
 
 
-    <!-- BROKEN LOGO -->
+    <!-- LOGO -->
 
     <div class="box">
 
         <h2>OUR COMPANY LOGO</h2>
 
         <div class="broken-image">
-            ⚠️ image failed to load
+            image failed to load
         </div>
 
         <p>
@@ -642,16 +710,18 @@ footer {
     </div>
 
 
-    <!-- TERRIBLE DECISION COUNTER -->
+    <!-- COUNTER -->
 
     <div class="box">
 
-        <h2> TERRIBLE DECISION COUNTER</h2>
+        <h2>TERRIBLE DECISION COUNTER</h2>
 
         <div class="counter">
+
             You have made
             <strong id="clickCount">0</strong>
             atrocious decisions.
+
         </div>
 
     </div>
@@ -661,14 +731,14 @@ footer {
 
     <div class="box">
 
-        <h2> FREE SECURITY SCAN</h2>
+        <h2>FREE SECURITY SCAN</h2>
 
         <p>
             Find out if your computer is suspicious.
         </p>
 
         <button onclick="scan()">
-             SCAN COMPUTER
+            SCAN COMPUTER
         </button>
 
         <p id="scanResult">
@@ -682,14 +752,16 @@ footer {
 
     <div class="box">
 
-        <h2> IMPORTANT DOWNLOAD</h2>
+        <h2>IMPORTANT DOWNLOAD</h2>
 
         <p>
             Downloading an extremely important file.
         </p>
 
         <div id="loadingContainer">
+
             <div id="loadingBar"></div>
+
         </div>
 
         <p id="loadingText">
@@ -699,17 +771,20 @@ footer {
     </div>
 
 
-    <!-- DO NOT CLICK -->
+    <!-- DON'T CLICK -->
 
     <div class="box">
 
-        <h2> DO NOT CLICK THIS BUTTON</h2>
+        <h2>DO NOT CLICK THIS BUTTON</h2>
 
         <p>
             Seriously. There is no reason to click it.
         </p>
 
-        <button id="dontClick" onclick="dontClick()">
+        <button
+            id="dontClick"
+            onclick="dontClick()"
+        >
             DO NOT CLICK
         </button>
 
@@ -720,14 +795,14 @@ footer {
 
     <div class="box">
 
-        <h2> MAKE THE WEBSITE WORSE</h2>
+        <h2>MAKE THE WEBSITE WORSE</h2>
 
         <p>
-            not recommended
+            This button has absolutely no useful purpose.
         </p>
 
         <button onclick="makeWorse()">
-            💣 MAKE IT WORSE
+            MAKE IT WORSE
         </button>
 
         <p>
@@ -742,7 +817,7 @@ footer {
 
     <div class="box">
 
-        <h2> THE WEBSITE IS WATCHING YOU</h2>
+        <h2>THE WEBSITE IS WATCHING YOU</h2>
 
         <p>
             Move your mouse around.
@@ -767,14 +842,14 @@ footer {
 
     <div class="box">
 
-        <h2>🎰 COMPLETELY LEGITIMATE SLOT MACHINE</h2>
+        <h2>COMPLETELY LEGITIMATE SLOT MACHINE</h2>
 
         <div class="slot" id="slot">
-            🍌 🍌 🍌
+            7 7 7
         </div>
 
         <button onclick="spinSlots()">
-             SPIN FOR MONEY
+            SPIN FOR MONEY
         </button>
 
         <p id="slotResult">
@@ -784,11 +859,11 @@ footer {
     </div>
 
 
-    <!-- FAKE AI -->
+    <!-- AI -->
 
     <div class="box">
 
-        <h2> AI LIFE ANALYZER</h2>
+        <h2>AI LIFE ANALYZER</h2>
 
         <p>
             Our advanced artificial intelligence will
@@ -796,7 +871,7 @@ footer {
         </p>
 
         <button onclick="analyzeYou()">
-             ANALYZE ME
+            ANALYZE ME
         </button>
 
         <div class="ai-result" id="aiResult">
@@ -810,26 +885,22 @@ footer {
 
     <div class="box">
 
-        <h2> EMOJI WEATHER MACHINE</h2>
+        <h2>TEXT WEATHER MACHINE</h2>
 
         <p>
-            Select your weather.
+            Make nonsense fall from the sky.
         </p>
 
-        <button onclick="emojiRain('💀')">
-            💀 
+        <button onclick="textRain('ERROR')">
+            ERROR RAIN
         </button>
 
-        <button onclick="emojiRain('🍌')">
-            🍌 
+        <button onclick="textRain('404')">
+            404 RAIN
         </button>
 
-        <button onclick="emojiRain('🤡')">
-            🤡 
-        </button>
-
-        <button onclick="emojiRain('💩')">
-            💩 
+        <button onclick="textRain('WHY')">
+            WHY RAIN
         </button>
 
     </div>
@@ -839,18 +910,18 @@ footer {
 
     <div class="box">
 
-        <h2> RAINBOW MODE</h2>
+        <h2>RAINBOW MODE</h2>
 
         <p>
             There is no reason for this.
         </p>
 
         <button onclick="rainbowMode()">
-             ACTIVATE RAINBOW
+            ACTIVATE RAINBOW
         </button>
 
         <button onclick="stopRainbow()">
-             STOP RAINBOW
+            STOP RAINBOW
         </button>
 
     </div>
@@ -860,15 +931,17 @@ footer {
 
     <div class="box">
 
-        <h2>🕳️ DEFINITELY SAFE BLACK HOLE</h2>
+        <h2>BLACK HOLE</h2>
 
         <p>
-            Creates a completely unnecessary temporary
-            black hole on your screen.
+            This time it actually does something.
         </p>
 
-        <button id="blackHoleButton" onclick="blackHole()">
-             OPEN BLACK HOLE
+        <button
+            id="blackHoleButton"
+            onclick="blackHole()"
+        >
+            OPEN BLACK HOLE
         </button>
 
     </div>
@@ -878,14 +951,17 @@ footer {
 
     <div class="box">
 
-        <h2> SECRET AREA</h2>
+        <h2>SECRET AREA</h2>
 
         <p>
             This definitely isn't another Rickroll.
         </p>
 
-        <button class="rick" onclick="secretRick()">
-             UNLOCK SECRET
+        <button
+            class="rick"
+            onclick="secretRick()"
+        >
+            UNLOCK SECRET
         </button>
 
     </div>
@@ -895,14 +971,14 @@ footer {
 
     <div class="box">
 
-        <h2> GENERATE FREE MONEY</h2>
+        <h2>GENERATE FREE MONEY</h2>
 
         <p>
             This button generates real money.
         </p>
 
         <button onclick="money()">
-            💵 GENERATE MONEY
+            GENERATE MONEY
         </button>
 
         <p id="moneyResult"></p>
@@ -914,35 +990,35 @@ footer {
 
     <div class="box">
 
-        <h2>🤔 IMPORTANT QUESTION</h2>
+        <h2>IMPORTANT QUESTION</h2>
 
         <p>
             Do you trust this website?
         </p>
 
         <button onclick="trust(true)">
-            YES!, WITH MY LIFE!!!
+            YES
         </button>
 
         <button onclick="trust(false)">
-            Yes? I GUESS?
+            Yes?
         </button>
 
     </div>
 
 
-    <!-- FAKE UPDATE -->
+    <!-- UPDATE -->
 
     <div class="box">
 
-        <h2> SYSTEM UPDATE</h2>
+        <h2>SYSTEM UPDATE</h2>
 
         <p>
             Your browser is extremely outdated.
         </p>
 
         <button onclick="fakeUpdate()">
-             UPDATE BROWSER
+            UPDATE BROWSER
         </button>
 
     </div>
@@ -952,7 +1028,7 @@ footer {
 
     <div class="box">
 
-        <h2>🚨 EMERGENCY EXIT</h2>
+        <h2>EMERGENCY EXIT</h2>
 
         <p>
             If something has gone wrong, leave immediately.
@@ -962,7 +1038,7 @@ footer {
             class="rick"
             onclick="emergencyExit()"
         >
-             EMERGENCY EXIT
+            EMERGENCY EXIT
         </button>
 
     </div>
@@ -972,14 +1048,14 @@ footer {
 
     <div class="box">
 
-        <h2> TOTALLY NORMAL MUSIC PLAYER</h2>
+        <h2>TOTALLY NORMAL MUSIC PLAYER</h2>
 
         <p>
             This is definitely not Rick Astley.
         </p>
 
         <button onclick="music()">
-             PLAY MUSIC
+            PLAY MUSIC
         </button>
 
     </div>
@@ -989,7 +1065,7 @@ footer {
 
     <div class="box">
 
-        <h2> BREAKING NEWS</h2>
+        <h2>BREAKING NEWS</h2>
 
         <marquee direction="right">
             BREAKING NEWS: NOTHING HAS HAPPENED
@@ -1003,19 +1079,20 @@ footer {
 
     </div>
 
+
 </div>
 
 
 <footer>
 
-    <h2>WAIT. You made it?</h2>
+    <h2>THANK YOU FOR VISITING</h2>
 
     <p>
-        You probably shouldn't have visited.
+        You probably shouldn't have.
     </p>
 
     <button onclick="finish()">
-        🏁 FINISH WEBSITE
+        FINISH WEBSITE
     </button>
 
 </footer>
@@ -1025,7 +1102,7 @@ footer {
 
 <div id="virus">
 
-    <h2>⚠️ VIRUS DETECTED ⚠️</h2>
+    <h2>VIRUS DETECTED</h2>
 
     <p style="font-size:30px;">
         YOUR COMPUTER HAS BEEN INFECTED.
@@ -1051,15 +1128,17 @@ footer {
 <div id="fakeUpdate">
 
     <h1 style="text-shadow:none;">
-         SYSTEM UPDATE
+        SYSTEM UPDATE
     </h1>
 
     <p style="font-size:25px;">
-        Installing Extremely Unnecessary Things...
+        Installing extremely unnecessary things...
     </p>
 
     <div id="updateBar">
+
         <div id="updateProgress"></div>
+
     </div>
 
     <h2 id="updateText">
@@ -1069,15 +1148,23 @@ footer {
 </div>
 
 
+<!-- BLACK HOLE -->
+
 <div id="blackHole"></div>
 
 
+<!-- ACHIEVEMENT -->
+
 <div id="achievement">
-    🏆 ACHIEVEMENT UNLOCKED
+    ACHIEVEMENT UNLOCKED
 </div>
 
 
 <script>
+
+/* =========================
+   SETTINGS
+========================= */
 
 const RICKROLL =
     "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
@@ -1090,93 +1177,115 @@ let chaos = 0;
 let fakeCursorStarted = false;
 
 
-/* =========================================
-   COUNTING
-========================================= */
+/* =========================
+   CLICK COUNTER
+========================= */
 
 function countClick() {
 
     clicks++;
+
     chaos += 2;
 
-    document.getElementById("clickCount")
-        .textContent = clicks;
+    if (chaos > 100)
+        chaos = 100;
+
+    document.getElementById(
+        "clickCount"
+    ).textContent = clicks;
 
     updateChaos();
 
     if (clicks === 5)
-        achievement("You made 5 terrible decisions.");
+        achievement(
+            "You made 5 terrible decisions."
+        );
 
     if (clicks === 10)
-        achievement("You still haven't left.");
+        achievement(
+            "You still haven't left."
+        );
 
     if (clicks === 20)
-        achievement("This is becoming concerning.");
+        achievement(
+            "This is becoming concerning."
+        );
 
     if (clicks === 30)
-        achievement("You are REALLY committed.");
+        achievement(
+            "You are REALLY committed."
+        );
 
     if (clicks === 50)
-        achievement("🏆 MASTER OF BAD DECISIONS");
+        achievement(
+            "MASTER OF BAD DECISIONS"
+        );
 
     if (clicks === 100)
-        achievement("💀 YOU HAVE BECOME THE WEBSITE.");
-
+        achievement(
+            "YOU HAVE BECOME THE WEBSITE."
+        );
 }
 
 
-/* =========================================
+/* =========================
    CHAOS
-========================================= */
+========================= */
 
 function updateChaos() {
 
-    chaos = Math.min(100, chaos);
+    document.getElementById(
+        "chaosLevel"
+    ).textContent = chaos;
 
-    document.getElementById("chaosLevel")
-        .textContent = chaos;
-
-    document.getElementById("chaosBar")
-        .style.width = chaos + "%";
+    document.getElementById(
+        "chaosBar"
+    ).style.width = chaos + "%";
 
     if (chaos >= 50) {
-        document.body.classList.add("cursed");
+
+        document.body.classList.add(
+            "cursed"
+        );
     }
 
     if (chaos >= 80) {
-        document.body.classList.add("shake");
-    }
 
-    if (chaos >= 100) {
-        achievement("☢️ MAXIMUM CHAOS ACHIEVED");
+        document.body.classList.add(
+            "shake"
+        );
     }
 }
 
 
-/* =========================================
-   ACHIEVEMENT
-========================================= */
+/* =========================
+   ACHIEVEMENTS
+========================= */
 
 function achievement(text) {
 
     const box =
-        document.getElementById("achievement");
+        document.getElementById(
+            "achievement"
+        );
 
     box.innerHTML =
-        "🏆 ACHIEVEMENT UNLOCKED<br><br>" +
+        "ACHIEVEMENT UNLOCKED<br><br>" +
         text;
 
     box.style.display = "block";
 
     setTimeout(() => {
+
         box.style.display = "none";
+
     }, 3500);
 }
 
 
-/* =========================================
+/* =========================
    RICKROLL
-========================================= */
+========================= */
 
 function rickroll() {
 
@@ -1190,9 +1299,9 @@ function rickroll() {
 }
 
 
-/* =========================================
+/* =========================
    GIFT
-========================================= */
+========================= */
 
 function giftClicked() {
 
@@ -1201,9 +1310,9 @@ function giftClicked() {
     setTimeout(() => {
 
         createPopup(
-            "CONGRATULATIONS!!!",
+            "CONGRATULATIONS",
             `
-            <h2>🎉 YOU WON!</h2>
+            <h2>YOU WON!</h2>
 
             <p>
                 Your $500 gift card has been reserved.
@@ -1224,7 +1333,9 @@ function verifyGift(button) {
     countClick();
 
     const content =
-        button.closest(".popup-content");
+        button.closest(
+            ".popup-content"
+        );
 
     content.innerHTML = `
         <h3>VERIFYING...</h3>
@@ -1252,9 +1363,9 @@ function verifyGift(button) {
 }
 
 
-/* =========================================
+/* =========================
    SECRET
-========================================= */
+========================= */
 
 function secretRick() {
 
@@ -1263,7 +1374,7 @@ function secretRick() {
     createPopup(
         "SECRET AREA",
         `
-        <h2>🎉 YOU FOUND IT!</h2>
+        <h2>YOU FOUND IT!</h2>
 
         <p>
             Congratulations on discovering
@@ -1278,9 +1389,9 @@ function secretRick() {
 }
 
 
-/* =========================================
+/* =========================
    EMERGENCY
-========================================= */
+========================= */
 
 function emergencyExit() {
 
@@ -1289,23 +1400,23 @@ function emergencyExit() {
     createPopup(
         "EMERGENCY EXIT",
         `
-        <h2>🚨 ESCAPE!</h2>
+        <h2>ESCAPE!</h2>
 
         <p>
             Click below to immediately leave.
         </p>
 
         <button onclick="rickroll()">
-            🚪 ESCAPE NOW
+            ESCAPE NOW
         </button>
         `
     );
 }
 
 
-/* =========================================
+/* =========================
    MUSIC
-========================================= */
+========================= */
 
 function music() {
 
@@ -1314,36 +1425,38 @@ function music() {
     createPopup(
         "MUSIC PLAYER",
         `
-        <h2>🎵 NOW PLAYING</h2>
+        <h2>NOW PLAYING</h2>
 
         <p>
             Definitely Not Rick Astley
         </p>
 
         <button onclick="rickroll()">
-            ▶️ PLAY
+            PLAY
         </button>
         `
     );
 }
 
 
-/* =========================================
+/* =========================
    MAKE WORSE
-========================================= */
+========================= */
 
 function makeWorse() {
 
     countClick();
 
     worseLevel++;
+
     chaos += 5;
 
     if (chaos > 100)
         chaos = 100;
 
-    document.getElementById("worseLevel")
-        .textContent = worseLevel;
+    document.getElementById(
+        "worseLevel"
+    ).textContent = worseLevel;
 
     updateChaos();
 
@@ -1361,7 +1474,10 @@ function makeWorse() {
     ];
 
     const selected =
-        colors[(worseLevel - 1) % colors.length];
+        colors[
+            (worseLevel - 1) %
+            colors.length
+        ];
 
     document.body.style.background =
         selected[0];
@@ -1411,7 +1527,9 @@ function makeWorse() {
 
         case 4:
 
-            document.body.classList.add("shake");
+            document.body.classList.add(
+                "shake"
+            );
 
             break;
 
@@ -1421,7 +1539,7 @@ function makeWorse() {
             createPopup(
                 "FREE IPHONE",
                 `
-                <h2>📱 YOU WON!</h2>
+                <h2>YOU WON!</h2>
 
                 <p>
                     You were randomly selected.
@@ -1447,9 +1565,7 @@ function makeWorse() {
 
         case 7:
 
-            emojiRain("💀");
-            emojiRain("🤡");
-            emojiRain("WHY?");
+            textRain("WHY");
 
             break;
 
@@ -1463,7 +1579,9 @@ function makeWorse() {
 
         case 9:
 
-            document.body.classList.add("cursed");
+            document.body.classList.add(
+                "cursed"
+            );
 
             break;
 
@@ -1473,7 +1591,7 @@ function makeWorse() {
             createPopup(
                 "MUSIC",
                 `
-                <h2>🎤 FREE MUSIC</h2>
+                <h2>FREE MUSIC</h2>
 
                 <p>
                     The song is definitely normal.
@@ -1545,21 +1663,23 @@ function makeWorse() {
 
         case 17:
 
-            emojiRain("🍌");
-
-            emojiRain("💩");
-
-            emojiRain("🧀");
+            textRain("ERROR");
 
             break;
 
 
         case 18:
 
-            document.body.classList.add("spin-page");
+            document.body.classList.add(
+                "spin-page"
+            );
 
             setTimeout(() => {
-                document.body.classList.remove("spin-page");
+
+                document.body.classList.remove(
+                    "spin-page"
+                );
+
             }, 8000);
 
             break;
@@ -1567,12 +1687,14 @@ function makeWorse() {
 
         case 19:
 
-            for (let i = 0; i < 8; i++) {
+            for (let i = 0; i < 5; i++) {
 
                 setTimeout(() => {
+
                     notification(
-                        "🚨 CHAOS DETECTED 🚨"
+                        "CHAOS DETECTED"
                     );
+
                 }, i * 400);
 
             }
@@ -1582,8 +1704,9 @@ function makeWorse() {
 
         case 20:
 
-            document.getElementById("virus")
-                .style.display = "block";
+            document.getElementById(
+                "virus"
+            ).style.display = "block";
 
             break;
 
@@ -1591,10 +1714,10 @@ function makeWorse() {
         default:
 
             if (worseLevel % 2 === 0)
-                emojiRain("⚠️");
+                textRain("ERROR");
 
             if (worseLevel % 3 === 0)
-                createFloating("💀");
+                createFloating("404");
 
             if (worseLevel % 5 === 0)
                 createPopup(
@@ -1605,16 +1728,18 @@ function makeWorse() {
 }
 
 
-/* =========================================
+/* =========================
    POPUPS
-========================================= */
+========================= */
 
 function createPopup(title, content) {
 
     if (popupCount >= 12) {
 
         const oldest =
-            document.querySelector(".popup");
+            document.querySelector(
+                ".popup"
+            );
 
         if (oldest)
             oldest.remove();
@@ -1629,14 +1754,14 @@ function createPopup(title, content) {
 
     popupCount++;
 
-    const popupWidth = 340;
-    const popupHeight = 250;
+    const width = 340;
+    const height = 250;
 
     const maxX =
         Math.max(
             10,
             window.innerWidth -
-            popupWidth -
+            width -
             10
         );
 
@@ -1644,7 +1769,7 @@ function createPopup(title, content) {
         Math.max(
             10,
             window.innerHeight -
-            popupHeight -
+            height -
             10
         );
 
@@ -1676,16 +1801,27 @@ function createPopup(title, content) {
         </div>
     `;
 
-    document.body.appendChild(popup);
+    document.body.appendChild(
+        popup
+    );
 
     makeDraggable(
         popup,
-        popup.querySelector(".popup-header")
+        popup.querySelector(
+            ".popup-header"
+        )
     );
 }
 
 
-function makeDraggable(element, handle) {
+/* =========================
+   DRAGGING
+========================= */
+
+function makeDraggable(
+    element,
+    handle
+) {
 
     let dragging = false;
     let offsetX = 0;
@@ -1711,7 +1847,8 @@ function makeDraggable(element, handle) {
             point.clientY -
             rect.top;
 
-        element.style.zIndex = 30000;
+        element.style.zIndex =
+            30000;
 
         if (e.cancelable)
             e.preventDefault();
@@ -1729,10 +1866,12 @@ function makeDraggable(element, handle) {
                 : e;
 
         let x =
-            point.clientX - offsetX;
+            point.clientX -
+            offsetX;
 
         let y =
-            point.clientY - offsetY;
+            point.clientY -
+            offsetY;
 
         const maxX =
             Math.max(
@@ -1753,13 +1892,19 @@ function makeDraggable(element, handle) {
         x =
             Math.max(
                 5,
-                Math.min(x, maxX)
+                Math.min(
+                    x,
+                    maxX
+                )
             );
 
         y =
             Math.max(
                 5,
-                Math.min(y, maxY)
+                Math.min(
+                    y,
+                    maxY
+                )
             );
 
         element.style.left =
@@ -1774,6 +1919,7 @@ function makeDraggable(element, handle) {
 
 
     function stopDrag() {
+
         dragging = false;
     }
 
@@ -1812,12 +1958,18 @@ function makeDraggable(element, handle) {
 }
 
 
+/* =========================
+   CLOSE POPUP
+========================= */
+
 function closePopup(button) {
 
     countClick();
 
     const popup =
-        button.closest(".popup");
+        button.closest(
+            ".popup"
+        );
 
     if (!popup)
         return;
@@ -1845,9 +1997,9 @@ function closePopup(button) {
 }
 
 
-/* =========================================
+/* =========================
    DON'T CLICK
-========================================= */
+========================= */
 
 function dontClick() {
 
@@ -1892,9 +2044,9 @@ function dontClick() {
 }
 
 
-/* =========================================
+/* =========================
    SECURITY SCAN
-========================================= */
+========================= */
 
 function scan() {
 
@@ -1906,7 +2058,7 @@ function scan() {
         );
 
     result.textContent =
-        "🔍 Scanning...";
+        "Scanning...";
 
     let progress = 0;
 
@@ -1916,21 +2068,23 @@ function scan() {
             progress += 10;
 
             result.textContent =
-                "🔍 Scanning " +
+                "Scanning " +
                 progress +
                 "%...";
 
             if (progress >= 100) {
 
-                clearInterval(interval);
+                clearInterval(
+                    interval
+                );
 
                 result.textContent =
-                    "⚠️ 47 suspicious vibes detected.";
+                    "47 suspicious vibes detected.";
 
                 createPopup(
                     "SECURITY ALERT",
                     `
-                    <h3>⚠️ THREAT DETECTED</h3>
+                    <h3>THREAT DETECTED</h3>
 
                     <p>
                         Your computer contains
@@ -1948,9 +2102,9 @@ function scan() {
 }
 
 
-/* =========================================
+/* =========================
    TRUST
-========================================= */
+========================= */
 
 function trust(answer) {
 
@@ -1961,7 +2115,7 @@ function trust(answer) {
         createPopup(
             "BAD CHOICE",
             `
-            <h2>😐 REALLY?</h2>
+            <h2>REALLY?</h2>
 
             <p>
                 You trust THIS website?
@@ -1974,7 +2128,7 @@ function trust(answer) {
         createPopup(
             "GOOD",
             `
-            <h2>👏 SMART</h2>
+            <h2>SMART</h2>
 
             <p>
                 At least you don't trust us.
@@ -1986,9 +2140,9 @@ function trust(answer) {
 }
 
 
-/* =========================================
+/* =========================
    MONEY
-========================================= */
+========================= */
 
 function money() {
 
@@ -2017,7 +2171,7 @@ function money() {
         createPopup(
             "BANK ALERT",
             `
-            <h3>💸 TRANSACTION COMPLETE</h3>
+            <h3>TRANSACTION COMPLETE</h3>
 
             <p>
                 You generated $999,999,999.
@@ -2037,27 +2191,26 @@ function money() {
 }
 
 
-/* =========================================
+/* =========================
    SLOT MACHINE
-========================================= */
+========================= */
 
 function spinSlots() {
 
     countClick();
 
     const symbols = [
-        "🍌",
-        "💀",
-        "🤡",
-        "💩",
-        "🍕",
-        "🦆",
-        "🚨",
-        "7️⃣"
+        "7",
+        "BAR",
+        "X",
+        "$",
+        "???"
     ];
 
     const slot =
-        document.getElementById("slot");
+        document.getElementById(
+            "slot"
+        );
 
     const result =
         document.getElementById(
@@ -2085,7 +2238,9 @@ function spinSlots() {
 
             if (spins >= 12) {
 
-                clearInterval(interval);
+                clearInterval(
+                    interval
+                );
 
                 const final =
                     Array.from(
@@ -2105,17 +2260,17 @@ function spinSlots() {
                 result.textContent =
                     final[0] === final[1] &&
                     final[1] === final[2]
-                        ? "🎉 JACKPOT!!! You won absolutely nothing!"
-                        : "❌ You lost. The casino is confused.";
+                        ? "JACKPOT! You won absolutely nothing."
+                        : "You lost. The casino is confused.";
             }
 
         }, 100);
 }
 
 
-/* =========================================
-   AI ANALYZER
-========================================= */
+/* =========================
+   AI
+========================= */
 
 function analyzeYou() {
 
@@ -2151,14 +2306,16 @@ function analyzeYou() {
 
             } else {
 
-                clearInterval(interval);
+                clearInterval(
+                    interval
+                );
 
                 const diagnoses = [
                     "RESULT: You click buttons too much.",
                     "RESULT: Your curiosity is dangerous.",
-                    "RESULT: You have questionable taste in websites.",
+                    "RESULT: Your website choices are questionable.",
                     "RESULT: You are 73% chaos.",
-                    "RESULT: The website has diagnosed itself instead."
+                    "RESULT: The website has diagnosed itself."
                 ];
 
                 result.textContent =
@@ -2174,48 +2331,75 @@ function analyzeYou() {
 }
 
 
-/* =========================================
-   EMOJI RAIN
-========================================= */
+/* =========================
+   TEXT RAIN
+========================= */
 
-function emojiRain(emoji) {
+function textRain(text) {
 
     countClick();
 
-    for (let i = 0; i < 35; i++) {
+    for (
+        let i = 0;
+        i < 25;
+        i++
+    ) {
 
         setTimeout(() => {
 
             const item =
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
 
-            item.className = "rain";
+            item.className =
+                "floating";
 
-            item.textContent = emoji;
+            item.textContent =
+                text;
 
             item.style.left =
-                Math.random() * 100 + "vw";
+                Math.random() * 95 +
+                "vw";
 
-            item.style.animationDuration =
-                (2 + Math.random() * 4) + "s";
+            item.style.top =
+                "-40px";
 
-            item.style.fontSize =
-                (20 + Math.random() * 30) + "px";
+            item.style.setProperty(
+                "--x",
+                (
+                    Math.random() *
+                    200 -
+                    100
+                ) + "px"
+            );
 
-            document.body.appendChild(item);
+            item.style.setProperty(
+                "--y",
+                (
+                    window.innerHeight +
+                    100
+                ) + "px"
+            );
+
+            document.body.appendChild(
+                item
+            );
 
             setTimeout(() => {
-                item.remove();
-            }, 6500);
 
-        }, i * 60);
+                item.remove();
+
+            }, 4500);
+
+        }, i * 80);
     }
 }
 
 
-/* =========================================
+/* =========================
    RAINBOW
-========================================= */
+========================= */
 
 function rainbowMode() {
 
@@ -2226,7 +2410,7 @@ function rainbowMode() {
     );
 
     achievement(
-        "🌈 RAINBOW MODE ACTIVATED"
+        "RAINBOW MODE ACTIVATED"
     );
 }
 
@@ -2241,9 +2425,9 @@ function stopRainbow() {
 }
 
 
-/* =========================================
+/* =========================
    BLACK HOLE
-========================================= */
+========================= */
 
 function blackHole() {
 
@@ -2254,65 +2438,206 @@ function blackHole() {
             "blackHole"
         );
 
-    hole.style.display = "block";
+    const targets =
+        document.querySelectorAll(
+            "header, .container .box, footer"
+        );
 
-    achievement(
-        "🕳️ YOU HAVE OPENED A TOTALLY SAFE BLACK HOLE"
+    hole.style.display =
+        "block";
+
+    hole.classList.add(
+        "black-hole-active"
     );
+
+
+    /*
+        Get the black hole's center.
+    */
+
+    const holeRect =
+        hole.getBoundingClientRect();
+
+    const holeX =
+        holeRect.left +
+        holeRect.width / 2;
+
+    const holeY =
+        holeRect.top +
+        holeRect.height / 2;
+
+
+    /*
+        Convert each element to a fixed
+        position so it can visibly fly
+        toward the black hole.
+    */
+
+    targets.forEach(
+        (element, index) => {
+
+            const rect =
+                element.getBoundingClientRect();
+
+            const elementX =
+                rect.left +
+                rect.width / 2;
+
+            const elementY =
+                rect.top +
+                rect.height / 2;
+
+            const distanceX =
+                holeX -
+                elementX;
+
+            const distanceY =
+                holeY -
+                elementY;
+
+
+            /*
+                Freeze the element at its
+                current screen position.
+            */
+
+            element.style.position =
+                "relative";
+
+            element.style.zIndex =
+                "69999";
+
+
+            /*
+                Force browser to calculate
+                the current position.
+            */
+
+            element.offsetHeight;
+
+
+            setTimeout(() => {
+
+                element.classList.add(
+                    "sucked"
+                );
+
+                element.style.transform =
+                    `
+                    translate(
+                        ${distanceX}px,
+                        ${distanceY}px
+                    )
+                    rotate(
+                        ${720 + index * 180}deg
+                    )
+                    scale(0.02)
+                    `;
+
+                element.style.opacity =
+                    "0";
+
+            }, index * 150);
+
+        }
+    );
+
+
+    /*
+        Restore everything after the
+        black hole has eaten the page.
+    */
 
     setTimeout(() => {
 
-        hole.style.display = "none";
+        hole.classList.remove(
+            "black-hole-active"
+        );
 
-    }, 5000);
+        hole.style.display =
+            "none";
+
+
+        targets.forEach(
+            element => {
+
+                element.classList.remove(
+                    "sucked"
+                );
+
+                element.style.transform =
+                    "";
+
+                element.style.opacity =
+                    "";
+
+                element.style.position =
+                    "";
+
+                element.style.zIndex =
+                    "";
+
+            }
+        );
+
+
+        achievement(
+            "THE BLACK HOLE HAS EATEN THE WEBSITE"
+        );
+
+    }, 4000);
 }
 
 
-/* =========================================
-   FAKE NOTIFICATIONS
-========================================= */
+/* =========================
+   NOTIFICATION
+========================= */
 
 function notification(message) {
 
     const note =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
     note.className =
         "fake-notification";
 
     note.innerHTML = `
-        <strong>🚨 IMPORTANT</strong>
+        <strong>IMPORTANT</strong>
         <br><br>
         ${message}
     `;
 
-    document.body.appendChild(note);
+    document.body.appendChild(
+        note
+    );
 
     setTimeout(() => {
+
         note.remove();
+
     }, 5000);
 }
 
 
-/* =========================================
+/* =========================
    RANDOM NOTIFICATIONS
-========================================= */
+========================= */
 
 setInterval(() => {
 
-    if (Math.random() < .35) {
+    if (Math.random() < .3) {
 
         const messages = [
             "Someone clicked something.",
             "Your browser is judging you.",
-            "You have 1 unread notification.",
             "Your free prize is still waiting.",
             "The website made another bad decision.",
             "Error: Common sense not found.",
             "Your mouse has been reported.",
             "Please reconsider your life choices.",
-            "Rick Astley is getting closer.",
-            "BREAKING: Absolutely nothing happened."
+            "Rick Astley is getting closer."
         ];
 
         notification(
@@ -2325,50 +2650,67 @@ setInterval(() => {
         );
     }
 
-}, 7000);
+}, 8000);
 
 
-/* =========================================
-   FLOATING GARBAGE
-========================================= */
+/* =========================
+   FLOATING TEXT
+========================= */
 
 function createFloating(text) {
 
     const element =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
     element.className =
         "floating";
 
-    element.textContent = text;
+    element.textContent =
+        text;
 
     element.style.left =
-        Math.random() * 85 + "vw";
+        Math.random() * 85 +
+        "vw";
 
     element.style.top =
-        Math.random() * 75 + "vh";
+        Math.random() * 75 +
+        "vh";
 
     element.style.setProperty(
         "--x",
-        (Math.random() * 500 - 250) + "px"
+        (
+            Math.random() *
+            500 -
+            250
+        ) + "px"
     );
 
     element.style.setProperty(
         "--y",
-        (Math.random() * 500 - 250) + "px"
+        (
+            Math.random() *
+            500 -
+            250
+        ) + "px"
     );
 
-    document.body.appendChild(element);
+    document.body.appendChild(
+        element
+    );
 
     setTimeout(() => {
+
         element.remove();
+
     }, 4000);
 }
 
 
-/* =========================================
+/* =========================
    FAKE CURSOR
-========================================= */
+========================= */
 
 function startFakeCursor() {
 
@@ -2378,33 +2720,41 @@ function startFakeCursor() {
     fakeCursorStarted = true;
 
     const cursor =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
-    cursor.id = "fakeCursor";
+    cursor.id =
+        "fakeCursor";
 
-    cursor.textContent = "🖱️";
+    cursor.textContent =
+        "CLICK";
 
-    document.body.appendChild(cursor);
+    document.body.appendChild(
+        cursor
+    );
 
     setInterval(() => {
 
         cursor.style.left =
-            Math.random() * 90 + "vw";
+            Math.random() * 90 +
+            "vw";
 
         cursor.style.top =
-            Math.random() * 90 + "vh";
+            Math.random() * 90 +
+            "vh";
 
     }, 1000);
 }
 
 
-/* =========================================
-   EYES FOLLOW CURSOR
-========================================= */
+/* =========================
+   EYES FOLLOW MOUSE
+========================= */
 
 document.addEventListener(
     "mousemove",
-    (event) => {
+    event => {
 
         document
             .querySelectorAll(".eye")
@@ -2428,39 +2778,45 @@ document.addEventListener(
 
                 const angle =
                     Math.atan2(
-                        event.clientY - eyeY,
-                        event.clientX - eyeX
+                        event.clientY -
+                        eyeY,
+                        event.clientX -
+                        eyeX
                     );
 
                 const distance =
                     Math.min(
                         28,
                         Math.hypot(
-                            event.clientX - eyeX,
-                            event.clientY - eyeY
+                            event.clientX -
+                            eyeX,
+                            event.clientY -
+                            eyeY
                         ) / 5
                     );
 
                 pupil.style.transform =
-                    `translate(
+                    `
+                    translate(
                         ${Math.cos(angle) * distance}px,
                         ${Math.sin(angle) * distance}px
-                    )`;
+                    )
+                    `;
             });
-
     }
 );
 
 
-/* =========================================
-   DOWNLOAD BAR
-========================================= */
+/* =========================
+   DOWNLOAD
+========================= */
 
 setInterval(() => {
 
     if (loading < 97) {
 
-        loading += Math.random() * .2;
+        loading +=
+            Math.random() * .2;
 
         document.getElementById(
             "loadingBar"
@@ -2478,9 +2834,9 @@ setInterval(() => {
 }, 400);
 
 
-/* =========================================
+/* =========================
    FAKE UPDATE
-========================================= */
+========================= */
 
 function fakeUpdate() {
 
@@ -2501,11 +2857,13 @@ function fakeUpdate() {
             "updateText"
         );
 
-    screen.style.display = "block";
+    screen.style.display =
+        "block";
 
     let value = 0;
 
-    progress.style.width = "0%";
+    progress.style.width =
+        "0%";
 
     const interval =
         setInterval(() => {
@@ -2520,11 +2878,14 @@ function fakeUpdate() {
                 value + "%";
 
             text.textContent =
-                Math.floor(value) + "%";
+                Math.floor(value) +
+                "%";
 
             if (value >= 100) {
 
-                clearInterval(interval);
+                clearInterval(
+                    interval
+                );
 
                 text.textContent =
                     "UPDATE COMPLETE. NOTHING CHANGED.";
@@ -2535,7 +2896,7 @@ function fakeUpdate() {
                         "none";
 
                     achievement(
-                        " You successfully installed absolutely nothing."
+                        "You installed absolutely nothing."
                     );
 
                 }, 1500);
@@ -2545,16 +2906,16 @@ function fakeUpdate() {
 }
 
 
-/* =========================================
+/* =========================
    FINISH
-========================================= */
+========================= */
 
 function finish() {
 
     countClick();
 
     createPopup(
-        "FINISHING...",
+        "FINISHING",
         `
         <h2>Please wait.</h2>
 
@@ -2571,7 +2932,7 @@ function finish() {
     setTimeout(() => {
 
         createPopup(
-            "FINISHING...",
+            "FINISHING",
             `
             <h2>99%</h2>
 
@@ -2586,9 +2947,9 @@ function finish() {
     setTimeout(() => {
 
         createPopup(
-            "SUCCESS!",
+            "SUCCESS",
             `
-            <h2>🎉 YOU DID IT!</h2>
+            <h2>YOU DID IT!</h2>
 
             <p>
                 You successfully finished
@@ -2602,16 +2963,16 @@ function finish() {
         );
 
         achievement(
-            "🏆 WEBSITE COMPLETION ACHIEVEMENT"
+            "WEBSITE COMPLETION ACHIEVEMENT"
         );
 
     }, 3500);
 }
 
 
-/* =========================================
-   VIRUS ESCAPE
-========================================= */
+/* =========================
+   ESCAPE VIRUS
+========================= */
 
 function escapeVirus() {
 
@@ -2620,17 +2981,18 @@ function escapeVirus() {
     alert(
         "Nice try.\n\n" +
         "There was never a virus.\n\n" +
-        "The real virus was the website... lol."
+        "The real virus was the website."
     );
 
     document.getElementById(
         "virus"
-    ).style.display = "none";
+    ).style.display =
+        "none";
 
     createPopup(
         "ESCAPE SUCCESSFUL",
         `
-        <h2> YOU ESCAPED!</h2>
+        <h2>YOU ESCAPED!</h2>
 
         <p>
             Unfortunately, you're still here.
@@ -2644,28 +3006,23 @@ function escapeVirus() {
 }
 
 
-/* =========================================
+/* =========================
    RANDOM CHAOS
-========================================= */
+========================= */
 
 setInterval(() => {
 
     if (worseLevel < 4)
         return;
 
-    if (Math.random() < .25) {
+    if (Math.random() < .2) {
 
         const garbage = [
-            "💀",
-            "🤡",
-            "WHY?",
             "ERROR",
             "404",
+            "WHY?",
             "LOL",
-            "⚠️",
-            "RICK?",
-            "🍌",
-            "💩"
+            "RICK?"
         ];
 
         createFloating(
@@ -2678,16 +3035,19 @@ setInterval(() => {
         );
     }
 
-}, 3000);
+}, 3500);
 
 
-/* =========================================
-   RANDOM CHAOS LEVEL
-========================================= */
+/* =========================
+   RANDOM CHAOS GROWTH
+========================= */
 
 setInterval(() => {
 
-    if (chaos < 100 && Math.random() < .2) {
+    if (
+        chaos < 100 &&
+        Math.random() < .2
+    ) {
 
         chaos++;
 
@@ -2697,19 +3057,19 @@ setInterval(() => {
 }, 3000);
 
 
-/* =========================================
-   RANDOM POPUP
-========================================= */
+/* =========================
+   RANDOM POPUPS
+========================= */
 
 setInterval(() => {
 
     if (
         chaos >= 60 &&
-        Math.random() < .15
+        Math.random() < .12
     ) {
 
         createPopup(
-            " AUTOMATIC WARNING",
+            "AUTOMATIC WARNING",
             `
             <h3>THE WEBSITE IS GETTING WORSE</h3>
 
