@@ -304,8 +304,9 @@ footer {
     filter: saturate(1.8) contrast(1.2);
 }
 
+
 /* =========================================
-   LEVEL 100 NO SIGNAL SCREEN
+   LEVEL 100 NO INTERNET SCREEN
 ========================================= */
 
 #noSignalScreen {
@@ -355,7 +356,6 @@ footer {
     height: 75px;
     background: #aaa;
     transform: rotate(45deg);
-    transform-origin: center;
 }
 
 .no-signal-content h1 {
@@ -397,6 +397,14 @@ footer {
     color: white;
     transform: none;
 }
+
+.sike-title {
+    font-family: Arial, Helvetica, sans-serif !important;
+    color: #202124 !important;
+    text-shadow: none !important;
+    animation: none !important;
+    transform: none !important;
+}
 </style>
 </head>
 
@@ -434,6 +442,7 @@ footer {
 
     </div>
 
+
     <div class="box">
 
         <h1>CONGRATULATIONS!!!</h1>
@@ -458,6 +467,7 @@ footer {
 
     </div>
 
+
     <div class="box">
 
         <h2>OUR COMPANY LOGO</h2>
@@ -472,6 +482,7 @@ footer {
 
     </div>
 
+
     <div class="box">
 
         <h2>TERRIBLE DECISION COUNTER</h2>
@@ -483,6 +494,7 @@ footer {
         </div>
 
     </div>
+
 
     <div class="box">
 
@@ -501,6 +513,7 @@ footer {
         </p>
 
     </div>
+
 
     <div class="box">
 
@@ -522,6 +535,7 @@ footer {
 
     </div>
 
+
     <div class="box">
 
         <h2>DO NOT CLICK THIS BUTTON</h2>
@@ -535,6 +549,7 @@ footer {
         </button>
 
     </div>
+
 
     <div class="box">
 
@@ -555,6 +570,7 @@ footer {
 
     </div>
 
+
     <div class="box">
 
         <h2>SECRET AREA</h2>
@@ -572,6 +588,7 @@ footer {
 
     </div>
 
+
     <div class="box">
 
         <h2>GENERATE FREE MONEY</h2>
@@ -587,6 +604,7 @@ footer {
         <p id="moneyResult"></p>
 
     </div>
+
 
     <div class="box">
 
@@ -606,6 +624,7 @@ footer {
 
     </div>
 
+
     <div class="box">
 
         <h2>EMERGENCY EXIT</h2>
@@ -623,6 +642,7 @@ footer {
 
     </div>
 
+
     <div class="box">
 
         <h2>TOTALLY NORMAL MUSIC PLAYER</h2>
@@ -636,6 +656,7 @@ footer {
         </button>
 
     </div>
+
 
     <div class="box">
 
@@ -654,6 +675,7 @@ footer {
     </div>
 
 </div>
+
 
 <footer>
 
@@ -696,7 +718,7 @@ footer {
 
         <button
             class="no-signal-button"
-            onclick="location.reload()"
+            onclick="sikeReload()"
         >
             Reload
         </button>
@@ -725,7 +747,7 @@ let level100Triggered = false;
 
 
 /* =========================================
-   COUNT TERRIBLE DECISIONS
+   COUNT CLICKS
 ========================================= */
 
 function countClick() {
@@ -802,7 +824,7 @@ function rickroll() {
 
 
 /* =========================================
-   GIFT CARD
+   GIFT
 ========================================= */
 
 function giftClicked() {
@@ -890,7 +912,7 @@ function secretRick() {
 
 
 /* =========================================
-   EMERGENCY EXIT
+   EMERGENCY
 ========================================= */
 
 function emergencyExit() {
@@ -959,6 +981,12 @@ function triggerNoSignal() {
     document.querySelectorAll(".floating")
         .forEach(item => item.remove());
 
+    const cursor =
+        document.getElementById("fakeCursor");
+
+    if (cursor)
+        cursor.remove();
+
     document.getElementById("noSignalScreen")
         .style.display = "flex";
 
@@ -982,6 +1010,7 @@ function makeWorse() {
 
     document.getElementById("worseLevel")
         .textContent = worseLevel;
+
 
     /* LEVEL 100 */
 
@@ -1226,6 +1255,93 @@ function makeWorse() {
 
             break;
     }
+}
+
+
+/* =========================================
+   SIKE RELOAD
+========================================= */
+
+function sikeReload() {
+
+    const content =
+        document.querySelector(".no-signal-content");
+
+    content.innerHTML = `
+        <h1 class="sike-title">SIKE.</h1>
+
+        <p>
+            You really thought you could escape?
+        </p>
+
+        <p>
+            The website is coming back.
+        </p>
+    `;
+
+
+    setTimeout(() => {
+
+        document.getElementById("noSignalScreen")
+            .style.display = "none";
+
+        level100Triggered = false;
+
+        worseLevel = 0;
+
+        document.getElementById("worseLevel")
+            .textContent = "0";
+
+        document.body.style.background =
+            "#00ff00";
+
+        document.body.style.color =
+            "#ff00ff";
+
+        document.body.style.fontFamily =
+            '"Comic Sans MS", cursive';
+
+        document.body.style.fontSize =
+            "";
+
+        document.body.classList.remove(
+            "shake",
+            "cursed"
+        );
+
+
+        /* Restore the original No Internet screen */
+
+        document.querySelector(
+            "#noSignalScreen .no-signal-content"
+        ).innerHTML = `
+            <div class="no-signal-icon"></div>
+
+            <h1>No internet</h1>
+
+            <p>
+                Try:
+            </p>
+
+            <ul>
+                <li>Checking the network cables, modem, and router</li>
+                <li>Reconnecting to Wi-Fi</li>
+                <li>Running network diagnostics</li>
+            </ul>
+
+            <p>
+                ERR_INTERNET_DISCONNECTED
+            </p>
+
+            <button
+                class="no-signal-button"
+                onclick="sikeReload()"
+            >
+                Reload
+            </button>
+        `;
+
+    }, 1800);
 }
 
 
@@ -1651,6 +1767,9 @@ function money() {
 
 function notification(message) {
 
+    if (level100Triggered)
+        return;
+
     const note =
         document.createElement("div");
 
@@ -1710,10 +1829,13 @@ setInterval(() => {
 
 
 /* =========================================
-   FLOATING GARBAGE
+   FLOATING
 ========================================= */
 
 function createFloating(text) {
+
+    if (level100Triggered)
+        return;
 
     const element =
         document.createElement("div");
@@ -1795,7 +1917,10 @@ function startFakeCursor() {
 
 setInterval(() => {
 
-    if (loading < 97 && !level100Triggered) {
+    if (
+        loading < 97 &&
+        !level100Triggered
+    ) {
 
         loading += Math.random() * .2;
 
