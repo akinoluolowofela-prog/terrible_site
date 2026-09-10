@@ -801,7 +801,392 @@ footer {
             This button has absolutely no useful purpose.
         </p>
 
-        <button onclick="makeWorse()">
+        <button onclick="function makeWorse() {
+
+    countClick();
+
+    worseLevel++;
+
+    document.getElementById("worseLevel")
+        .textContent = worseLevel;
+
+    const colors = [
+        ["#00ff00", "#ff00ff"],
+        ["orange", "blue"],
+        ["yellow", "purple"],
+        ["red", "cyan"],
+        ["black", "lime"],
+        ["pink", "green"],
+        ["white", "red"],
+        ["#123456", "#ff9900"],
+        ["brown", "hotpink"],
+        ["navy", "yellow"]
+    ];
+
+    const colorsUsed =
+        colors[(worseLevel - 1) % colors.length];
+
+    document.body.style.background =
+        colorsUsed[0];
+
+    document.body.style.color =
+        colorsUsed[1];
+
+
+    /* =========================================
+       LEVEL 100 - TAB DELETE
+    ========================================= */
+
+    if (worseLevel === 100) {
+
+        document.body.innerHTML = `
+            <div id="tabDeletedScreen" style="
+                position:fixed;
+                inset:0;
+                background:#000;
+                color:#00ff00;
+                display:flex;
+                flex-direction:column;
+                justify-content:center;
+                align-items:center;
+                text-align:center;
+                font-family:monospace;
+                z-index:999999;
+                padding:30px;
+            ">
+                <h1 style="
+                    font-size:clamp(40px,8vw,80px);
+                    margin:0 0 30px;
+                ">
+                    TAB DELETE INITIATED
+                </h1>
+
+                <p id="deleteStatus" style="
+                    font-size:25px;
+                    line-height:1.6;
+                ">
+                    Deleting tab...
+                </p>
+            </div>
+        `;
+
+        let countdown = 3;
+
+        const status =
+            document.getElementById("deleteStatus");
+
+        const deleteTimer =
+            setInterval(() => {
+
+                countdown--;
+
+                if (countdown > 0) {
+
+                    status.textContent =
+                        "Tab deletion in " +
+                        countdown +
+                        "...";
+
+                } else {
+
+                    clearInterval(deleteTimer);
+
+                    status.textContent =
+                        "DELETING TAB...";
+
+                    /*
+                     * Browsers normally block window.close()
+                     * unless this page opened the tab itself.
+                     */
+                    setTimeout(() => {
+
+                        window.close();
+
+                        /*
+                         * If the browser refuses to close
+                         * the tab, show the fallback.
+                         */
+                        setTimeout(() => {
+
+                            document.body.innerHTML = `
+                                <div style="
+                                    position:fixed;
+                                    inset:0;
+                                    background:#000;
+                                    color:#ff0000;
+                                    display:flex;
+                                    flex-direction:column;
+                                    justify-content:center;
+                                    align-items:center;
+                                    text-align:center;
+                                    font-family:monospace;
+                                    padding:30px;
+                                ">
+
+                                    <h1 style="
+                                        font-size:60px;
+                                        margin:0 0 25px;
+                                    ">
+                                        TAB DELETE FAILED
+                                    </h1>
+
+                                    <p style="
+                                        color:white;
+                                        font-size:24px;
+                                    ">
+                                        Your browser refused to
+                                        delete this tab.
+                                    </p>
+
+                                    <p style="
+                                        color:#00ff00;
+                                        font-size:20px;
+                                    ">
+                                        Level 100 reached.
+                                    </p>
+
+                                    <button
+                                        onclick="location.reload()"
+                                        style="
+                                            margin-top:25px;
+                                            padding:15px 25px;
+                                            font-size:20px;
+                                            cursor:pointer;
+                                        "
+                                    >
+                                        RESTORE WEBSITE
+                                    </button>
+
+                                </div>
+                            `;
+
+                        }, 500);
+
+                    }, 500);
+                }
+
+            }, 1000);
+
+        return;
+    }
+
+
+    /* =========================================
+       NORMAL CHAOS
+    ========================================= */
+
+    switch (worseLevel) {
+
+        case 1:
+
+            createPopup(
+                "IMPORTANT",
+                "<p>You clicked the button.</p>"
+            );
+
+            break;
+
+
+        case 2:
+
+            document.body.style.fontFamily =
+                "Papyrus, fantasy";
+
+            alert(
+                "Papyrus has been enabled.\n\n" +
+                "There is no undo button."
+            );
+
+            break;
+
+
+        case 3:
+
+            createPopup(
+                "SECURITY ALERT",
+                `
+                <p>
+                    Your computer is 3% suspicious.
+                </p>
+                `
+            );
+
+            break;
+
+
+        case 4:
+
+            document.body.classList.add("shake");
+
+            break;
+
+
+        case 5:
+
+            createPopup(
+                "FREE IPHONE",
+                `
+                <h2>YOU WON!</h2>
+
+                <p>
+                    You were randomly selected.
+                </p>
+
+                <button onclick="rickroll()">
+                    CLAIM IPHONE
+                </button>
+                `
+            );
+
+            break;
+
+
+        case 6:
+
+            createPopup(
+                "STOP!",
+                `
+                <p>
+                    This popup has no purpose.
+                </p>
+                `
+            );
+
+            break;
+
+
+        case 7:
+
+            createFloating("WHY?");
+            createFloating("ERROR");
+            createFloating("404");
+
+            break;
+
+
+        case 8:
+
+            notification(
+                "Someone made the website worse."
+            );
+
+            break;
+
+
+        case 9:
+
+            document.body.classList.add("cursed");
+
+            break;
+
+
+        case 10:
+
+            createPopup(
+                "MUSIC",
+                `
+                <h2>FREE MUSIC</h2>
+
+                <p>
+                    The song is definitely normal.
+                </p>
+
+                <button onclick="rickroll()">
+                    PLAY
+                </button>
+                `
+            );
+
+            break;
+
+
+        case 11:
+
+            for (let i = 0; i < 3; i++) {
+
+                setTimeout(() => {
+
+                    createPopup(
+                        "WHY",
+                        "<p>Why did you click that?</p>"
+                    );
+
+                }, i * 300);
+            }
+
+            break;
+
+
+        case 12:
+
+            notification(
+                "Rick Astley has entered the chat."
+            );
+
+            break;
+
+
+        case 13:
+
+            startFakeCursor();
+
+            break;
+
+
+        case 14:
+
+            document.body.style.fontSize =
+                "18px";
+
+            break;
+
+
+        case 15:
+
+            createPopup(
+                "FINAL WARNING",
+                `
+                <h2>STOP</h2>
+
+                <p>
+                    There is absolutely no reason
+                    to continue.
+                </p>
+
+                <button onclick="rickroll()">
+                    CONTINUE ANYWAY
+                </button>
+                `
+            );
+
+            break;
+
+
+        default:
+
+            if (worseLevel % 3 === 0) {
+
+                notification(
+                    "The website has become even worse."
+                );
+
+            }
+
+            if (worseLevel % 5 === 0) {
+
+                createFloating("WARNING");
+
+            }
+
+            /*
+             * No fake virus at level 20 anymore.
+             * The real final event happens at level 100.
+             */
+
+            break;
+    }
+}
+">
             MAKE IT WORSE
         </button>
 
