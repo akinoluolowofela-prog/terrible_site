@@ -1,0 +1,1886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FREE PRIZE CLICK HERE 100% REAL</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        margin: 0;
+        min-height: 100vh;
+        background: #00ff00;
+        color: #ff00ff;
+        font-family: "Comic Sans MS", cursive;
+        overflow-x: hidden;
+        transition: background .25s, color .25s;
+    }
+
+    /* Yes, this is intentionally ugly. */
+
+    header {
+        background: red;
+        color: yellow;
+        text-align: center;
+        padding: 30px 10px;
+        border: 15px dashed blue;
+    }
+
+    h1 {
+        font-size: clamp(42px, 8vw, 75px);
+        margin: 0;
+        text-shadow: 6px 6px blue, -5px -5px lime;
+        animation: wobble .35s infinite alternate;
+    }
+
+    @keyframes wobble {
+        from {
+            transform: rotate(-2deg) scale(1);
+        }
+
+        to {
+            transform: rotate(2deg) scale(1.03);
+        }
+    }
+
+    marquee {
+        background: yellow;
+        color: red;
+        font-size: 24px;
+        padding: 10px;
+        border: 5px solid black;
+    }
+
+    .container {
+        max-width: 950px;
+        margin: 30px auto;
+        padding: 20px;
+    }
+
+    .box {
+        background: cyan;
+        border: 10px ridge purple;
+        padding: 25px;
+        margin-bottom: 30px;
+        box-shadow: 15px 15px 0 red;
+    }
+
+    .warning {
+        background: black;
+        color: white;
+        border: 8px dotted red;
+        text-align: center;
+    }
+
+    .ugly {
+        font-size: 30px;
+        color: blue;
+        background: orange;
+        transform: rotate(-1deg);
+        padding: 10px;
+    }
+
+    button,
+    .gift {
+        border: 8px outset gray;
+        padding: 14px 22px;
+        font-size: 20px;
+        font-family: "Comic Sans MS", cursive;
+        font-weight: bold;
+        background: yellow;
+        color: red;
+        margin: 8px;
+        cursor: pointer;
+    }
+
+    button:hover,
+    .gift:hover {
+        background: red;
+        color: yellow;
+        transform: rotate(4deg) scale(1.07);
+    }
+
+    button:active {
+        border-style: inset;
+    }
+
+    #dontClick {
+        background: red;
+        color: white;
+        font-size: 32px;
+    }
+
+    .counter {
+        font-size: 34px;
+        background: white;
+        color: black;
+        padding: 20px;
+        text-align: center;
+        border: 10px double black;
+    }
+
+    #loadingContainer {
+        width: 100%;
+        height: 35px;
+        background: gray;
+        border: 5px solid black;
+        overflow: hidden;
+    }
+
+    #loadingBar {
+        height: 100%;
+        width: 1%;
+        background: red;
+        transition: width .2s;
+    }
+
+    .gift {
+        display: inline-block;
+        text-decoration: none;
+        background: red;
+        color: yellow;
+        border-color: gold;
+        font-size: 28px;
+    }
+
+    .rick {
+        background: #111;
+        color: #00ffff;
+        border-color: #ff1493;
+    }
+
+    /* =========================
+       POPUPS
+       ========================= */
+
+    .popup {
+        position: fixed;
+        width: 340px;
+        max-width: calc(100vw - 20px);
+        background: #eeeeee;
+        color: black;
+        border: 3px solid #222;
+        box-shadow: 8px 8px 0 black;
+        z-index: 10000;
+        font-family: Arial, sans-serif;
+        user-select: none;
+    }
+
+    .popup-header {
+        background: #000080;
+        color: white;
+        padding: 8px;
+        font-weight: bold;
+        cursor: move;
+        touch-action: none;
+        user-select: none;
+    }
+
+    .popup-content {
+        padding: 18px;
+        user-select: text;
+    }
+
+    .popup-content button {
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        padding: 7px 12px;
+        margin: 4px;
+    }
+
+    /* =========================
+       FAKE NOTIFICATIONS
+       ========================= */
+
+    .fake-notification {
+        position: fixed;
+        right: 15px;
+        bottom: 15px;
+        width: 300px;
+        max-width: calc(100vw - 30px);
+        background: white;
+        color: black;
+        padding: 16px;
+        border: 3px solid black;
+        box-shadow: 5px 5px black;
+        z-index: 9000;
+        animation: notificationIn .35s;
+    }
+
+    @keyframes notificationIn {
+        from {
+            transform: translateX(400px);
+        }
+
+        to {
+            transform: translateX(0);
+        }
+    }
+
+    /* =========================
+       CHAOS
+       ========================= */
+
+    .shake {
+        animation: shake .12s infinite;
+    }
+
+    @keyframes shake {
+        0%   { transform: translate(2px, 1px); }
+        25%  { transform: translate(-2px, -1px); }
+        50%  { transform: translate(1px, 2px); }
+        75%  { transform: translate(-1px, -2px); }
+        100% { transform: translate(2px, 1px); }
+    }
+
+    .spin-page {
+        animation: spinPage 8s linear infinite;
+    }
+
+    @keyframes spinPage {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    .floating {
+        position: fixed;
+        pointer-events: none;
+        z-index: 8500;
+        font-size: 30px;
+        animation: floatAway 4s linear forwards;
+    }
+
+    @keyframes floatAway {
+        0% {
+            opacity: 1;
+            transform: translate(0, 0) rotate(0);
+        }
+
+        100% {
+            opacity: 0;
+            transform:
+                translate(
+                    var(--x),
+                    var(--y)
+                )
+                rotate(720deg);
+        }
+    }
+
+    /* =========================
+       ACHIEVEMENT
+       ========================= */
+
+    #achievement {
+        display: none;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        max-width: 320px;
+        background: #222;
+        color: white;
+        padding: 18px;
+        border: 3px solid gold;
+        box-shadow: 0 0 20px gold;
+        z-index: 30000;
+    }
+
+    /* =========================
+       FAKE VIRUS
+       ========================= */
+
+    #virus {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: black;
+        color: red;
+        z-index: 99999;
+        text-align: center;
+        padding: 15vh 20px;
+        font-family: monospace;
+    }
+
+    #virus h2 {
+        font-size: clamp(45px, 8vw, 80px);
+        animation: blink .2s infinite;
+    }
+
+    @keyframes blink {
+        50% {
+            opacity: 0;
+        }
+    }
+
+    footer {
+        text-align: center;
+        background: pink;
+        color: blue;
+        padding: 40px;
+        border: 10px dotted green;
+    }
+
+    /* Fake broken image */
+    .broken-image {
+        width: 180px;
+        height: 100px;
+        background: white;
+        border: 3px solid black;
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 15px auto;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+    }
+
+    /* The site gets progressively more questionable */
+    .cursed {
+        filter: saturate(1.8) contrast(1.2);
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <h1>⚠️ THE WORST WEBSITE EVER ⚠️</h1>
+
+    <p>
+        OFFICIAL WEBSITE • DEFINITELY LEGIT • PROBABLY
+    </p>
+
+</header>
+
+
+<marquee>
+     YOU ARE VISITOR #1,000,000!!! 
+    YOU WON SOMETHING!!!  CLICK EVERYTHING!!! 
+</marquee>
+
+
+<div class="container">
+
+    <!-- INTRO -->
+
+    <div class="box warning">
+
+        <h2>⚠️ IMPORTANT WARNING ⚠️</h2>
+
+        <p>
+            This website has been professionally designed
+            by someone who should probably not be designing websites.
+        </p>
+
+        <p>
+            Proceeding is not recommended.
+        </p>
+
+    </div>
+
+
+    <!-- FREE GIFT -->
+
+    <div class="box">
+
+        <h1> CONGRATULATIONS!!!</h1>
+
+        <p class="ugly">
+            YOU HAVE WON A FREE $500 GIFT CARD!!!
+        </p>
+
+        <a
+            class="gift"
+            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            target="_blank"
+            rel="noopener noreferrer"
+            onclick="giftClicked()"
+        >
+             CLAIM FREE GIFT CARD!!!
+        </a>
+
+        <p>
+            This offer expires approximately never.
+        </p>
+
+    </div>
+
+
+    <!-- BROKEN IMAGE -->
+
+    <div class="box">
+
+        <h2> OUR COMPANY LOGO</h2>
+
+        <div class="broken-image">
+            ⚠️ image failed to load
+        </div>
+
+        <p>
+            Logo temporarily unavailable since 2007.
+        </p>
+
+    </div>
+
+
+    <!-- COUNTER -->
+
+    <div class="box">
+
+        <h2> TERRIBLE DECISION COUNTER</h2>
+
+        <div class="counter">
+            You have made
+            <strong id="clickCount">0</strong>
+            atrocious decisions.
+        </div>
+
+    </div>
+
+
+    <!-- SECURITY -->
+
+    <div class="box">
+
+        <h2> FREE SECURITY SCAN</h2>
+
+        <p>
+            Find out if your computer is suspicious.
+        </p>
+
+        <button onclick="scan()">
+             SCAN COMPUTER
+        </button>
+
+        <p id="scanResult">
+            Scanner status: probably working
+        </p>
+
+    </div>
+
+
+    <!-- FAKE DOWNLOAD -->
+
+    <div class="box">
+
+        <h2> IMPORTANT DOWNLOAD</h2>
+
+        <p>
+            Downloading an extremely important file.
+        </p>
+
+        <div id="loadingContainer">
+
+            <div id="loadingBar"></div>
+
+        </div>
+
+        <p id="loadingText">
+            Downloading... 1%
+        </p>
+
+    </div>
+
+
+    <!-- DO NOT CLICK -->
+
+    <div class="box">
+
+        <h2>🚫 DO NOT CLICK THIS BUTTON</h2>
+
+        <p>
+            Seriously. There is no reason to click it.
+        </p>
+
+        <button id="dontClick" onclick="dontClick()">
+            DO NOT CLICK
+        </button>
+
+    </div>
+
+
+    <!-- MAKE WORSE -->
+
+    <div class="box">
+
+        <h2> MaKE THE WeBSITE wORsE(f0r some reason)</h2>
+
+        <p>
+            This button has absolutely no useful purpose.
+        </p>
+
+        <button onclick="makeWorse()">
+             MAKE IT WORSE
+        </button>
+
+        <p>
+            Current disaster level:
+            <strong id="worseLevel">0</strong>
+        </p>
+
+    </div>
+
+
+    <!-- SECRET -->
+
+    <div class="box">
+
+        <h2> SECRET AREA</h2>
+
+        <p>
+            This definitely isn't another Rickroll.
+        </p>
+
+        <button
+            class="rick"
+            onclick="secretRick()"
+        >
+             UNLOCK SECRET
+        </button>
+
+    </div>
+
+
+    <!-- MONEY -->
+
+    <div class="box">
+
+        <h2> GENERATE FREE MONEY</h2>
+
+        <p>
+            This button generates real money.
+        </p>
+
+        <button onclick="money()">
+             GENERATE MONEY
+        </button>
+
+        <p id="moneyResult"></p>
+
+    </div>
+
+
+    <!-- TRUST -->
+
+    <div class="box">
+
+        <h2> IMPORTANT QUESTION</h2>
+
+        <p>
+            Do you trust this website?
+        </p>
+
+        <button onclick="trust(true)">
+            YES 
+        </button>
+
+        <button onclick="trust(false)">
+            Yes? 
+        </button>
+
+    </div>
+
+
+    <!-- EMERGENCY -->
+
+    <div class="box">
+
+        <h2> EMERGENCY EXIT</h2>
+
+        <p>
+            If something has gone wrong, leave immediately.
+        </p>
+
+        <button
+            class="rick"
+            onclick="emergencyExit()"
+        >
+             EMERGENCY EXIT
+        </button>
+
+    </div>
+
+
+    <!-- MUSIC -->
+
+    <div class="box">
+
+        <h2> TOTALLY NORMAL MUSIC PLAYER</h2>
+
+        <p>
+            This is definitely not Rick Astley.
+        </p>
+
+        <button onclick="music()">
+             PLAY MUSIC
+        </button>
+
+    </div>
+
+
+    <!-- NEWS -->
+
+    <div class="box">
+
+        <h2> BREAKING NEWS</h2>
+
+        <marquee direction="right">
+            BREAKING NEWS: NOTHING HAS HAPPENED
+        </marquee>
+
+        <br><br>
+
+        <marquee direction="left">
+            UPDATE: STILL NOTHING
+        </marquee>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <h2>THANK YOU FOR VISITING</h2>
+
+    <p>
+        You probably shouldn't have.
+    </p>
+
+    <button onclick="finish()">
+        🏁 FINISH WEBSITE
+    </button>
+
+</footer>
+
+
+<!-- FAKE VIRUS -->
+
+<div id="virus">
+
+    <h2>⚠️ VIRUS DETECTED ⚠️</h2>
+
+    <p style="font-size:30px;">
+        YOUR COMPUTER HAS BEEN INFECTED.
+    </p>
+
+    <p style="font-size:45px;">
+        ERROR CODE: LOL-420-69
+    </p>
+
+    <button onclick="escapeVirus()">
+        ATTEMPT TO ESCAPE
+    </button>
+
+</div>
+
+
+<div id="achievement">
+    🏆 ACHIEVEMENT UNLOCKED
+</div>
+
+
+<script>
+
+/* =========================================
+   SETTINGS
+========================================= */
+
+const RICKROLL =
+    "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+
+let clicks = 0;
+let worseLevel = 0;
+let loading = 1;
+let popupCount = 0;
+let fakeCursorStarted = false;
+
+
+/* =========================================
+   COUNT TERRIBLE DECISIONS
+========================================= */
+
+function countClick() {
+
+    clicks++;
+
+    document.getElementById("clickCount")
+        .textContent = clicks;
+
+    if (clicks === 5)
+        achievement(
+            "You made 5 terrible decisions."
+        );
+
+    if (clicks === 10)
+        achievement(
+            "You still haven't left."
+        );
+
+    if (clicks === 20)
+        achievement(
+            "This is becoming concerning."
+        );
+
+    if (clicks === 30)
+        achievement(
+            "You are REALLY committed."
+        );
+
+    if (clicks === 50)
+        achievement(
+            "🏆 MASTER OF BAD DECISIONS"
+        );
+}
+
+
+/* =========================================
+   ACHIEVEMENT
+========================================= */
+
+function achievement(text) {
+
+    const box =
+        document.getElementById("achievement");
+
+    box.innerHTML =
+        "🏆 ACHIEVEMENT UNLOCKED<br><br>" +
+        text;
+
+    box.style.display = "block";
+
+    setTimeout(() => {
+
+        box.style.display = "none";
+
+    }, 3500);
+}
+
+
+/* =========================================
+   RICKROLL
+========================================= */
+
+function rickroll() {
+
+    countClick();
+
+    window.open(
+        RICKROLL,
+        "_blank",
+        "noopener,noreferrer"
+    );
+}
+
+
+/* =========================================
+   GIFT CARD
+========================================= */
+
+function giftClicked() {
+
+    countClick();
+
+    setTimeout(() => {
+
+        createPopup(
+            "CONGRATULATIONS!!!",
+            `
+            <h2>🎉 YOU WON!</h2>
+
+            <p>
+                Your $500 gift card has been reserved.
+            </p>
+
+            <button onclick="verifyGift(this)">
+                CLAIM NOW
+            </button>
+            `
+        );
+
+    }, 700);
+}
+
+
+function verifyGift(button) {
+
+    countClick();
+
+    const content =
+        button.closest(".popup-content");
+
+    content.innerHTML = `
+        <h3>VERIFYING...</h3>
+
+        <p>Checking eligibility...</p>
+        <p>Checking internet...</p>
+        <p>Checking vibes...</p>
+    `;
+
+    setTimeout(() => {
+
+        content.innerHTML = `
+            <h3> ONE LAST STEP</h3>
+
+            <p>
+                You are almost there.
+            </p>
+
+            <button onclick="rickroll()">
+                CONTINUE
+            </button>
+        `;
+
+    }, 2200);
+}
+
+
+/* =========================================
+   SECRET RICKROLL
+========================================= */
+
+function secretRick() {
+
+    countClick();
+
+    createPopup(
+        "SECRET AREA",
+        `
+        <h2>🎉 YOU FOUND IT!</h2>
+
+        <p>
+            Congratulations on discovering the
+            secret reward.
+        </p>
+
+        <button onclick="rickroll()">
+             COLLECT REWARD
+        </button>
+        `
+    );
+}
+
+
+/* =========================================
+   EMERGENCY EXIT
+========================================= */
+
+function emergencyExit() {
+
+    countClick();
+
+    createPopup(
+        "EMERGENCY EXIT",
+        `
+        <h2>🚨 ESCAPE!</h2>
+
+        <p>
+            Click below to immediately leave.
+        </p>
+
+        <button onclick="rickroll()">
+            🚪 ESCAPE NOW
+        </button>
+        `
+    );
+}
+
+
+/* =========================================
+   MUSIC
+========================================= */
+
+function music() {
+
+    countClick();
+
+    createPopup(
+        "MUSIC PLAYER",
+        `
+        <h2>🎵 NOW PLAYING</h2>
+
+        <p>
+            Definitely Not Rick Astley
+        </p>
+
+        <button onclick="rickroll()">
+            ▶️ PLAY
+        </button>
+        `
+    );
+}
+
+
+/* =========================================
+   MAKE IT WORSE
+========================================= */
+
+function makeWorse() {
+
+    countClick();
+
+    worseLevel++;
+
+    document.getElementById("worseLevel")
+        .textContent = worseLevel;
+
+    const colors = [
+        ["#00ff00", "#ff00ff"],
+        ["orange", "blue"],
+        ["yellow", "purple"],
+        ["red", "cyan"],
+        ["black", "lime"],
+        ["pink", "green"],
+        ["white", "red"],
+        ["#123456", "#ff9900"],
+        ["brown", "hotpink"],
+        ["navy", "yellow"]
+    ];
+
+    const colorsUsed =
+        colors[(worseLevel - 1) % colors.length];
+
+    document.body.style.background =
+        colorsUsed[0];
+
+    document.body.style.color =
+        colorsUsed[1];
+
+
+    switch (worseLevel) {
+
+        case 1:
+
+            createPopup(
+                "IMPORTANT",
+                "<p>You clicked the button.</p>"
+            );
+
+            break;
+
+
+        case 2:
+
+            document.body.style.fontFamily =
+                "Papyrus, fantasy";
+
+            alert(
+                "Papyrus has been enabled.\n\n" +
+                "There is no undo button."
+            );
+
+            break;
+
+
+        case 3:
+
+            createPopup(
+                "SECURITY ALERT",
+                `
+                <p>
+                    Your computer is 3% suspicious.
+                </p>
+                `
+            );
+
+            break;
+
+
+        case 4:
+
+            document.body.classList.add("shake");
+
+            break;
+
+
+        case 5:
+
+            createPopup(
+                "FREE IPHONE",
+                `
+                <h2>📱 YOU WON!</h2>
+
+                <p>
+                    You were randomly selected.
+                </p>
+
+                <button onclick="rickroll()">
+                    CLAIM IPHONE
+                </button>
+                `
+            );
+
+            break;
+
+
+        case 6:
+
+            createPopup(
+                "STOP!",
+                `
+                <p>
+                    This popup has no purpose.
+                </p>
+                `
+            );
+
+            break;
+
+
+        case 7:
+
+            createFloating("💀");
+            createFloating("🤡");
+            createFloating("WHY?");
+
+            break;
+
+
+        case 8:
+
+            notification(
+                "⚠️ Someone made the website worse."
+            );
+
+            break;
+
+
+        case 9:
+
+            document.body.classList.add("cursed");
+
+            break;
+
+
+        case 10:
+
+            createPopup(
+                "MUSIC",
+                `
+                <h2>🎤 FREE MUSIC</h2>
+
+                <p>
+                    The song is definitely normal.
+                </p>
+
+                <button onclick="rickroll()">
+                     PLAY
+                </button>
+                `
+            );
+
+            break;
+
+
+        case 11:
+
+            for (let i = 0; i < 3; i++) {
+
+                setTimeout(() => {
+
+                    createPopup(
+                        "WHY",
+                        "<p>Why did you click that?</p>"
+                    );
+
+                }, i * 300);
+            }
+
+            break;
+
+
+        case 12:
+
+            notification(
+                "Rick Astley has entered the chat."
+            );
+
+            break;
+
+
+        case 13:
+
+            startFakeCursor();
+
+            break;
+
+
+        case 14:
+
+            document.body.style.fontSize =
+                "18px";
+
+            break;
+
+
+        case 15:
+
+            createPopup(
+                "FINAL WARNING",
+                `
+                <h2>⚠️ STOP</h2>
+
+                <p>
+                    There is absolutely no reason
+                    to continue.
+                </p>
+
+                <button onclick="rickroll()">
+                    CONTINUE ANYWAY
+                </button>
+                `
+            );
+
+            break;
+
+
+        default:
+
+            if (worseLevel % 3 === 0) {
+
+                notification(
+                    "The website has become even worse."
+                );
+
+            }
+
+            if (worseLevel % 5 === 0) {
+
+                createFloating("⚠️");
+
+            }
+
+            if (worseLevel >= 20) {
+
+                document.getElementById("virus")
+                    .style.display = "block";
+            }
+    }
+}
+
+
+/* =========================================
+   DRAGGABLE POPUPS
+========================================= */
+
+function createPopup(title, content) {
+
+    /*
+        Keep the number of popups reasonable so
+        the browser doesn't get destroyed.
+    */
+
+    if (popupCount >= 12) {
+
+        const oldest =
+            document.querySelector(".popup");
+
+        if (oldest)
+            oldest.remove();
+
+        popupCount--;
+    }
+
+    const popup =
+        document.createElement("div");
+
+    popup.className = "popup";
+
+    popupCount++;
+
+    const popupWidth = 340;
+    const popupHeight = 250;
+
+    const maxX =
+        Math.max(10, window.innerWidth - popupWidth - 10);
+
+    const maxY =
+        Math.max(10, window.innerHeight - popupHeight - 10);
+
+    popup.style.left =
+        Math.floor(Math.random() * maxX) + "px";
+
+    popup.style.top =
+        Math.floor(Math.random() * maxY) + "px";
+
+    popup.innerHTML = `
+        <div class="popup-header">
+            ${title}
+        </div>
+
+        <div class="popup-content">
+
+            ${content}
+
+            <br>
+
+            <button onclick="closePopup(this)">
+                Close
+            </button>
+
+        </div>
+    `;
+
+    document.body.appendChild(popup);
+
+    makeDraggable(
+        popup,
+        popup.querySelector(".popup-header")
+    );
+}
+
+
+/* =========================================
+   BETTER DRAGGING
+   Mouse + touch support
+========================================= */
+
+function makeDraggable(element, handle) {
+
+    let dragging = false;
+    let offsetX = 0;
+    let offsetY = 0;
+
+    function startDrag(e) {
+
+        dragging = true;
+
+        const point =
+            e.touches ? e.touches[0] : e;
+
+        const rect =
+            element.getBoundingClientRect();
+
+        offsetX =
+            point.clientX - rect.left;
+
+        offsetY =
+            point.clientY - rect.top;
+
+        element.style.zIndex = 30000;
+
+        if (e.cancelable)
+            e.preventDefault();
+    }
+
+
+    function drag(e) {
+
+        if (!dragging)
+            return;
+
+        const point =
+            e.touches ? e.touches[0] : e;
+
+        let x =
+            point.clientX - offsetX;
+
+        let y =
+            point.clientY - offsetY;
+
+        /*
+            Don't let the popup completely
+            disappear off-screen.
+        */
+
+        const maxX =
+            window.innerWidth -
+            element.offsetWidth -
+            5;
+
+        const maxY =
+            window.innerHeight -
+            element.offsetHeight -
+            5;
+
+        x =
+            Math.max(5, Math.min(x, maxX));
+
+        y =
+            Math.max(5, Math.min(y, maxY));
+
+        element.style.left =
+            x + "px";
+
+        element.style.top =
+            y + "px";
+
+        if (e.cancelable)
+            e.preventDefault();
+    }
+
+
+    function stopDrag() {
+
+        dragging = false;
+
+    }
+
+
+    handle.addEventListener(
+        "mousedown",
+        startDrag
+    );
+
+    handle.addEventListener(
+        "touchstart",
+        startDrag,
+        { passive: false }
+    );
+
+    document.addEventListener(
+        "mousemove",
+        drag
+    );
+
+    document.addEventListener(
+        "touchmove",
+        drag,
+        { passive: false }
+    );
+
+    document.addEventListener(
+        "mouseup",
+        stopDrag
+    );
+
+    document.addEventListener(
+        "touchend",
+        stopDrag
+    );
+}
+
+
+function closePopup(button) {
+
+    countClick();
+
+    const popup =
+        button.closest(".popup");
+
+    if (!popup)
+        return;
+
+    popup.remove();
+
+    popupCount =
+        Math.max(0, popupCount - 1);
+
+    /*
+        Naturally replace the popup with
+        another unnecessary popup.
+    */
+
+    setTimeout(() => {
+
+        createPopup(
+            "HAHA",
+            `
+            <p>
+                You thought closing it would work.
+            </p>
+            `
+        );
+
+    }, 900);
+}
+
+
+/* =========================================
+   DO NOT CLICK
+========================================= */
+
+function dontClick() {
+
+    countClick();
+
+    const messages = [
+        "I TOLD YOU NOT TO CLICK.",
+        "WHY?",
+        "SERIOUSLY?",
+        "YOU HAD ONE JOB.",
+        "STOP.",
+        "THIS BUTTON HAS CONSEQUENCES.",
+        "I AM DISAPPOINTED.",
+        "THIS IS YOUR FAULT.",
+        "PLEASE STOP.",
+        "OKAY THIS IS PERSONAL NOW."
+    ];
+
+    alert(
+        messages[
+            Math.floor(
+                Math.random() * messages.length
+            )
+        ]
+    );
+
+    const button =
+        document.getElementById("dontClick");
+
+    button.style.position =
+        "relative";
+
+    button.style.left =
+        Math.floor(
+            Math.random() * 250 - 125
+        ) + "px";
+
+    button.style.top =
+        Math.floor(
+            Math.random() * 100 - 50
+        ) + "px";
+}
+
+
+/* =========================================
+   SECURITY SCAN
+========================================= */
+
+function scan() {
+
+    countClick();
+
+    const result =
+        document.getElementById("scanResult");
+
+    result.textContent =
+        "🔍 Scanning...";
+
+    let progress = 0;
+
+    const interval =
+        setInterval(() => {
+
+            progress += 10;
+
+            result.textContent =
+                "🔍 Scanning " +
+                progress +
+                "%...";
+
+            if (progress >= 100) {
+
+                clearInterval(interval);
+
+                result.textContent =
+                    "⚠️ 47 suspicious vibes detected.";
+
+                createPopup(
+                    "SECURITY ALERT",
+                    `
+                    <h3>⚠️ THREAT DETECTED</h3>
+
+                    <p>
+                        Your computer contains
+                        questionable vibes.
+                    </p>
+
+                    <button onclick="rickroll()">
+                        FIX COMPUTER
+                    </button>
+                    `
+                );
+            }
+
+        }, 180);
+}
+
+
+/* =========================================
+   TRUST
+========================================= */
+
+function trust(answer) {
+
+    countClick();
+
+    if (answer) {
+
+        createPopup(
+            "BAD CHOICE",
+            `
+            <h2>😐 REALLY?</h2>
+
+            <p>
+                You trust THIS website?
+            </p>
+            `
+        );
+
+    } else {
+
+        createPopup(
+            "GOOD",
+            `
+            <h2>👏 SMART</h2>
+
+            <p>
+                At least you don't trust us.
+                Unfortunately, you're already here.
+            </p>
+            `
+        );
+    }
+}
+
+
+/* =========================================
+   FAKE MONEY
+========================================= */
+
+function money() {
+
+    countClick();
+
+    const result =
+        document.getElementById("moneyResult");
+
+    result.textContent =
+        "Generating money...";
+
+    setTimeout(() => {
+
+        result.textContent =
+            "$999,999,999";
+
+    }, 1200);
+
+    setTimeout(() => {
+
+        result.textContent =
+            "$0.00";
+
+        createPopup(
+            "BANK ALERT",
+            `
+            <h3> TRANSACTION COMPLETE</h3>
+
+            <p>
+                You generated $999,999,999.
+            </p>
+
+            <p>
+                Unfortunately, it was imaginary.
+            </p>
+
+            <button onclick="rickroll()">
+                VIEW TRANSACTION
+            </button>
+            `
+        );
+
+    }, 2700);
+}
+
+
+/* =========================================
+   FAKE NOTIFICATIONS
+========================================= */
+
+function notification(message) {
+
+    const note =
+        document.createElement("div");
+
+    note.className =
+        "fake-notification";
+
+    note.innerHTML = `
+        <strong> IMPORTANT</strong>
+        <br><br>
+        ${message}
+    `;
+
+    document.body.appendChild(note);
+
+    setTimeout(() => {
+
+        note.remove();
+
+    }, 5000);
+}
+
+
+/* =========================================
+   RANDOM NOTIFICATIONS
+========================================= */
+
+setInterval(() => {
+
+    if (Math.random() < .3) {
+
+        const messages = [
+            "Someone clicked something.",
+            "Your browser is judging you.",
+            "You have 1 unread notification.",
+            "Your free prize is still waiting.",
+            "The website made another bad decision.",
+            "Error: Common sense not found.",
+            "Your mouse has been reported.",
+            "Please reconsider your life choices.",
+            "Rick Astley is getting closer."
+        ];
+
+        notification(
+            messages[
+                Math.floor(
+                    Math.random() *
+                    messages.length
+                )
+            ]
+        );
+    }
+
+}, 8000);
+
+
+/* =========================================
+   FLOATING RANDOM GARBAGE
+========================================= */
+
+function createFloating(text) {
+
+    const element =
+        document.createElement("div");
+
+    element.className =
+        "floating";
+
+    element.textContent = text;
+
+    element.style.left =
+        Math.random() * 85 + "vw";
+
+    element.style.top =
+        Math.random() * 75 + "vh";
+
+    element.style.setProperty(
+        "--x",
+        (Math.random() * 500 - 250) + "px"
+    );
+
+    element.style.setProperty(
+        "--y",
+        (Math.random() * 500 - 250) + "px"
+    );
+
+    document.body.appendChild(element);
+
+    setTimeout(() => {
+
+        element.remove();
+
+    }, 4000);
+}
+
+
+/* =========================================
+   FAKE CURSOR
+========================================= */
+
+function startFakeCursor() {
+
+    /*
+        Prevent accidentally starting
+        hundreds of timers.
+    */
+
+    if (fakeCursorStarted)
+        return;
+
+    fakeCursorStarted = true;
+
+    const cursor =
+        document.createElement("div");
+
+    cursor.id = "fakeCursor";
+
+    cursor.textContent = "🖱️";
+
+    cursor.style.position = "fixed";
+    cursor.style.pointerEvents = "none";
+    cursor.style.zIndex = "99998";
+    cursor.style.fontSize = "35px";
+
+    document.body.appendChild(cursor);
+
+    setInterval(() => {
+
+        cursor.style.left =
+            Math.random() * 90 + "vw";
+
+        cursor.style.top =
+            Math.random() * 90 + "vh";
+
+    }, 1000);
+}
+
+
+/* =========================================
+   LOADING BAR
+========================================= */
+
+setInterval(() => {
+
+    if (loading < 97) {
+
+        loading += Math.random() * .2;
+
+        document.getElementById("loadingBar")
+            .style.width =
+            loading + "%";
+
+        document.getElementById("loadingText")
+            .textContent =
+            "Downloading... " +
+            Math.floor(loading) +
+            "%";
+    }
+
+}, 400);
+
+
+/* =========================================
+   FINISH WEBSITE
+========================================= */
+
+function finish() {
+
+    countClick();
+
+    createPopup(
+        "FINISHING...",
+        `
+        <h2>Please wait.</h2>
+
+        <p>
+            Preparing to finish the website...
+        </p>
+
+        <p>
+            1%...
+        </p>
+        `
+    );
+
+    setTimeout(() => {
+
+        createPopup(
+            "FINISHING...",
+            `
+            <h2>99%</h2>
+
+            <p>
+                Almost done.
+            </p>
+            `
+        );
+
+    }, 1800);
+
+    setTimeout(() => {
+
+        createPopup(
+            "SUCCESS!",
+            `
+            <h2> YOU DID IT!</h2>
+
+            <p>
+                You successfully finished
+                The Worst Website Ever.
+            </p>
+
+            <button onclick="rickroll()">
+                VIEW CERTIFICATE
+            </button>
+            `
+        );
+
+    }, 3500);
+}
+
+
+/* =========================================
+   FAKE VIRUS
+========================================= */
+
+function escapeVirus() {
+
+    countClick();
+
+    alert(
+        "Nice try.\n\n" +
+        "There was never a virus.\n\n" +
+        "The real virus was the website....lol"
+    );
+
+    document.getElementById("virus")
+        .style.display = "none";
+
+    createPopup(
+        "ESCAPE SUCCESSFUL",
+        `
+        <h2> YOU ESCAPED!</h2>
+
+        <p>
+            Unfortunately, you're still here.
+        </p>
+
+        <button onclick="rickroll()">
+            CELEBRATE
+        </button>
+        `
+    );
+}
+
+
+/* =========================================
+   RANDOM CHAOS
+========================================= */
+
+setInterval(() => {
+
+    if (worseLevel < 4)
+        return;
+
+    if (Math.random() < .25) {
+
+        const garbage = [
+            "💀",
+            "🤡",
+            "WHY?",
+            "ERROR",
+            "404",
+            "LOL",
+            "⚠️",
+            "RICK?"
+        ];
+
+        createFloating(
+            garbage[
+                Math.floor(
+                    Math.random() *
+                    garbage.length
+                )
+            ]
+        );
+    }
+
+}, 3500);
+
+</script>
+
+</body>
+</html>
